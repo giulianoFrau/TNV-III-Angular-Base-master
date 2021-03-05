@@ -3,16 +3,12 @@
 module.exports = (sequelize, DataType) => {
   let DataEntry = sequelize.define('DataEntry', {
     // id missing because Sequelize adds it by default
-    country:  DataType.STRING(100),
-    population: DataType.INTEGER(14),
-    cases: DataType.INTEGER(11),
-    deaths: DataType.INTEGER(11),
-    recoveries: DataType.INTEGER(11),
-    recoveryRate: DataType.FLOAT,
-    fatalityRate: DataType.FLOAT,
-    continent: DataType.STRING(12),
-    classification: DataType.STRING(12),
-    date: DataType.INTEGER(12)
+    latitudine:  DataType.FLOAT,
+    longitudine: DataType.FLOAT,
+    nomePoi: DataType.STRING(30),
+    tipoPoi: DataType.STRING(30),
+    ingresso: DataType.STRING(15),
+    valutazione: DataType.STRING(15)
   }, {
     freezeTableName: true,
     timestamps: false,

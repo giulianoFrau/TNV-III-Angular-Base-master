@@ -21,19 +21,15 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-    const {country, population, cases, deaths, recoveries, recoveryRate, fatalityRate, continent, classification, date} = req.body;
+    const {latitudine, longitudine, nomePoi, tipoPoi, ingresso, valutazione} = req.body;
 
     DataEntry.create({
-        country: country,
-        population: population,
-        cases: cases,
-        deaths: deaths,
-        recoveries: recoveries,
-        recoveryRate: recoveryRate,
-        fatalityRate: fatalityRate,
-        continent: continent,
-        classification: classification,
-        date: date
+        latitudine: latitudine,
+        longitudine: longitudine,
+        nomePoi: nomePoi,
+        tipoPoi: tipoPoi,
+        ingresso: ingresso,
+        valutazione: valutazione
     })
         .then(dataEntry => res.status(201).json({
             dataEntry
@@ -45,19 +41,12 @@ router.post('/', function (req, res, next) {
 
 router.put('/:id', function (req, res, next) {
     const dataId = req.params.id;
-    const { country, population, cases, deaths, recoveries, recoveryRate, fatalityRate, continent, classification, date } = req.body;
+    const { ingresso, valutazione} = req.body;
 
     DataEntry.update({
-        country: country,
-        population: population,
-        cases: cases,
-        deaths: deaths,
-        recoveries: recoveries,
-        recoveryRate: recoveryRate,
-        fatalityRate: fatalityRate,
-        continent: continent,
-        classification: classification,
-        date: date
+    
+        ingresso: ingresso,
+        valutazione: valutazione
     }, {
         where: {
             id: dataId

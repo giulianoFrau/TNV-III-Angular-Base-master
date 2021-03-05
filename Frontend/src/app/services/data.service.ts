@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CovidData } from '../models/data.model';
+import { InterfacciaPoi } from '../models/data.model';
 
 
 @Injectable({
@@ -13,25 +13,21 @@ export class DataService {
   constructor( private http : HttpClient) { }
 
   getData () {
-    return this.http.get<Array<CovidData>>(this.baseURL)
+    return this.http.get<Array<InterfacciaPoi>>(this.baseURL)
   }
 
   getEntry( id ) {
-    return this.http.get<CovidData>(this.baseURL + "/" + id)
+    return this.http.get<InterfacciaPoi>(this.baseURL + "/" + id)
   }
 
-  addEntry = (data: CovidData) => {
-    return this.http.post<CovidData>(this.baseURL, {
-      "country": data.country,
-      "population": data.population,
-      "cases": data.cases,
-      "deaths": data.deaths,
-      "recoveries": data.recoveries,
-      "recoveryRate": data.recoveryRate,
-      "fatalityRate": data.fatalityRate,
-      "continent": data.continent,
-      "classification": data.classification,
-      "date": data.date
+  addEntry = (data: InterfacciaPoi) => {
+    return this.http.post<InterfacciaPoi>(this.baseURL, {
+      "latitudine": data.latitudine,
+      "longitudine": data.longitudine,
+      "nomePoi": data.nomePoi,
+      "tipoPoi": data.tipoPoi,
+      "ingresso": data.ingresso,
+      "valutazione": data.valutazione
     });
   };
 
@@ -39,19 +35,11 @@ export class DataService {
     return this.http.delete(this.baseURL + "/" + id)
   }
 
-  editEntry = (data: CovidData) => {
+  editEntry = (data: InterfacciaPoi) => {
     return this.http.put(this.baseURL + '/' + data.id, {
       "id": data.id,
-      "country": data.country,
-      "population": data.population,
-      "cases": data.cases,
-      "deaths": data.deaths,
-      "recoveries": data.recoveries,
-      "recoveryRate": data.recoveryRate,
-      "fatalityRate": data.fatalityRate,
-      "continent": data.continent,
-      "classification": data.classification,
-      "date": data.date
+      "ingresso": data.ingresso,
+      "valutazione": data.valutazione,
     });
   };
 

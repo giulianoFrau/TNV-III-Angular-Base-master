@@ -1,7 +1,8 @@
+import { InterfacciaPoi } from './../../models/data.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
-import { CovidData } from 'src/app/models/data.model';
+
 import { NgForm } from '@angular/forms'
 
 @Component({
@@ -13,10 +14,11 @@ export class EditComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private dataService: DataService, private router : Router) { }
 
-  dataEntry: CovidData;
+  dataEntry: InterfacciaPoi;
 
-  continents = ["Europe", "America", "Asia", "Oceania", "Africa", "Antartide"]
-  classifications = ["Very low", "Low" , "Medium" , "High" , "Very high"]
+  
+  ingresso = ["Libero", "A pagamento"," Offerta"]
+  valutazione = ["Mai piu", "Passabile" , "Discreto" , "Bello" , "Indimenticabile"];
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];

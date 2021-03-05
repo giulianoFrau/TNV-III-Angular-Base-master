@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
-import { CovidData } from './../../models/data.model'
+import { InterfacciaPoi } from '../../models/data.model';
 
 @Component({
   selector: 'app-add',
@@ -17,23 +17,24 @@ export class AddComponent implements OnInit {
     
   }
 
-  dataEntry : CovidData
+  dataEntry : InterfacciaPoi
 
-  continents = ["Europe", "America", "Asia", "Oceania", "Africa", "Antartide"]
-  classifications = ["Very low", "Low" , "Medium" , "High" , "Very high"]
+  tipoPoi = ["Spiaggia", "Monumento", "Museo", "Stadio", "Belvedere", "Altro"]
+  ingresso = ["Libero", "A pagamento"," Offerta"]
+  valutazione = ["Mai piu", "Passabile" , "Discreto" , "Bello" , "Indimenticabile"]
 
   onSubmit(form : NgForm){
     this.dataEntry = form.form.value;
-    console.log(form)
+    //console.log(form)
     console.log(this.dataEntry);
 
     this.dataService.addEntry(this.dataEntry).subscribe(response => {
       console.log(response);
       this.router.navigate(['/dashboard']);
     },
-    (err) => {
+    //(err) => {
       //fai qualcosa
-    }
+    //}
     )
   }
 }

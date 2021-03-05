@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './../../services/data.service';
-import { CovidData } from 'src/app/models/data.model';
+import { InterfacciaPoi } from 'src/app/models/data.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,20 +10,20 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  covidDataLoader=false;
+  interfacciaPoiLoader=false;
   constructor( private dataService: DataService, private router : Router) { }
 
   ngOnInit(): void {
     this.getEntries()
   }
 
-  public covidData: CovidData [];
+  public arrayInterfacciaPoi: InterfacciaPoi [];
   countries;
 
   getEntries(){
     this.dataService.getData().subscribe( (response : any) => {
-      this.covidData = response;
-      this.covidDataLoader=true;
+      this.arrayInterfacciaPoi = response;
+      this.interfacciaPoiLoader=true;
     })
     
     

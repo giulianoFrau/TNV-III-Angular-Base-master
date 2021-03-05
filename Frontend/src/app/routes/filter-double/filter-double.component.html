@@ -1,27 +1,30 @@
 <div class="container p-5">
     <div class="row">
-        <button class="btn btn-primary mr-5" [routerLink]="['/dashboard']">Back</button>
+        <button class="btn btn-primary mr-5" [routerLink]="['/dashboard']">Indietro</button>
     </div>
 
     <form class="pt-5" #form="ngForm">
+        
+<div class="form-group row">
+  <label for="nomePoi" class="col-sm-2 col-form-label">Nome POI</label>
+  <div class="col-sm-10">
+      <input type="text" class="form-control" id="nomePoi" required
+          name="nomePoi" [(ngModel)]="nomePoi">
+  </div>
+  
+</div>
         <div class="form-group row">
-            <label for="Continent" class="col-sm-2 col-form-label">Continent</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="continent" ngModel required name="continent">
-                    <option *ngFor="let continent of continents"> {{continent}} </option> 
-                </select>
-            </div>
+          <label for="valutazione" class="col-sm-2 col-form-label">Valutazione</label>
+          <div class="col-sm-10">
+              <select class="form-control" id="valutazione" required [(ngModel)]="valutazione"
+                  name="valutazione">
+                  <option [value]="valutation" *ngFor="let valutation of arrayValutazioni">
+                      {{valutation}}
+                  </option>
+              </select>
+          </div>
+      </div>
 
-        </div>
-
-        <div class="form-group row">
-            <label for="classification" class="col-sm-2 col-form-label">Classification</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="classification" ngModel required name="classification">
-                   <option *ngFor="let classification of classifications"> {{classification}}</option>
-                </select>
-            </div>
-        </div>
     </form>
 
     <button class="btn btn-primary mb-3" (click)="filterBy(form)">Filtra</button>
@@ -29,22 +32,24 @@
     <table class="table" *ngIf="showResult">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Country</th>
-            <th scope="col">Cases</th>
-            <th scope="col">Date</th>
-            <th scope="col">Continent</th>
-            <th scope="col">Classification</th>
+            <th scope="col">Latitudine</th>
+            <th scope="col">Longitudine</th>
+            <th scope="col">Nome POI</th>
+            <th scope="col">Tipo POI</th>
+            <th scope="col">Ingresso</th>
+            <th scope="col">Valutazione</th>
 
           </tr>
         </thead>
         <tbody>
-          <tr class="pointer" *ngFor="let entry of covidData | continentclassification 
-          : continent : classification">
-            <td>{{entry.country}}</td>
-            <td>{{entry.cases}}</td>
-            <td>{{entry.date | date}}</td>
-            <td>{{entry.continent}}</td>
-            <td>{{entry.classification}}</td>
+          <tr class="pointer" *ngFor="let entry of arrayInterfacciaPoi | filtronomevalutazione 
+          : nomePoi : valutazione">
+            <td>{{entry.latitudine}}</td>
+            <td>{{entry.longitudine}}</td>
+            <td>{{entry.nomePoi}}</td>
+            <td>{{entry.tipoPoi}}</td>
+            <td>{{entry.ingresso}}</td>
+            <td>{{entry.valutazione}}</td>
           </tr>
         </tbody>
       </table>
