@@ -14,15 +14,13 @@ import { EditComponent } from './routes/edit/edit.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FilterDoubleComponent } from './routes/filter-double/filter-double.component';
-import { ContinentclassificationPipe } from './pipes/continentclassification.pipe';
-import { SortingbydeathComponent } from './routes/sortingbydeath/sortingbydeath.component';
+
 import { SortByComponent } from './routes/sort-by/sort-by.component';
 import { WelcomepageComponent } from './routes/welcomepage/welcomepage.component';
-import { FilterbycountryComponent } from './routes/filterbycountry/filterbycountry.component';
-import { CountryPipe } from './pipes/country.pipe';
 import { LoadingpageComponent } from './components/loadingpage/loadingpage.component';
 import { ApiserviceService } from './services/apiservice.service';
 import { ApiComponent } from './routes/api/api.component';
+import { FiltronomevalutazionePipe } from './pipes/filtronomevalutazione.pipe';
 
 @NgModule({
   declarations: [
@@ -34,14 +32,11 @@ import { ApiComponent } from './routes/api/api.component';
     HeaderComponent,
     FooterComponent,
     FilterDoubleComponent,
-    ContinentclassificationPipe,
-    SortingbydeathComponent,
     SortByComponent,
     LoadingpageComponent,
     WelcomepageComponent,
-    FilterbycountryComponent,
-    CountryPipe,
-    ApiComponent
+    ApiComponent,
+    FiltronomevalutazionePipe
   ],
   imports: [
     BrowserModule,

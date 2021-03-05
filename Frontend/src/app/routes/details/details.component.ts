@@ -1,7 +1,8 @@
+import { InterfacciaPoi } from 'src/app/models/data.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
-import { CovidData } from 'src/app/models/data.model';
+
 
 @Component({
   selector: 'app-details',
@@ -13,7 +14,7 @@ export class DetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private dataService: DataService, 
     private router : Router) { }
 
-  dataEntry: CovidData;
+  dataEntry: InterfacciaPoi;
   id: number;
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class DetailsComponent implements OnInit {
       console.log(err);
       this.router.navigate(['/dashboard']);
     });
-    //this.router.navigate(['/dashboard']);
+    
 
   }
 }

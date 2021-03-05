@@ -1,4 +1,4 @@
-<div class="container p-5" *ngIf="covidDataLoader">
+<div class="container p-5" >
   <h1 class="text-center mb-5">
     Covid-21 Tracker
   </h1>
@@ -10,9 +10,9 @@
       </button>
   
     <button class="btn btn-primary mb-3" [routerLink]='["/filterdouble"]'>Filter Double</button>
-    <button class="btn btn-primary mb-3" [routerLink]='["/sortingbydeath"]'>Sort by death</button>
+    
     <button class="btn btn-primary mb-3" [routerLink]='["/sortBy"]'>Sort by </button>
-    <button class="btn btn-primary mb-3" [routerLink]='["/filterByCountry"]'>Filter By Country</button>
+    
     <button class="btn btn-primary mb-3" [routerLink]='["/apicorona"]'>Api</button>
 
   </div>
@@ -21,19 +21,19 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Country</th>
-        <th scope="col">Cases</th>
-        <th scope="col">Date</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Valutazione</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="pointer" *ngFor="let entry of covidData ; let i = index" (click)="goToDetails(entry.id)">
+      <tr class="pointer" *ngFor="let entry of arrayInterfacciaPoi ; let i = index" (click)="goToDetails(entry.id)">
         <th scope="row"> {{i + 1}}</th>
-        <td>{{entry.country}}</td>
-        <td>{{entry.cases}}</td>
-        <td>{{entry.date | date}}</td>
+        <td>{{entry.nomePoi}}</td>
+        <td>{{entry.tipoPoi}}</td>
+        <td>{{entry.valutazione}}</td>
       </tr>
     </tbody>
   </table>
 </div>
-<app-loadingpage *ngIf="!covidDataLoader" ></app-loadingpage>
+<app-loadingpage ></app-loadingpage>

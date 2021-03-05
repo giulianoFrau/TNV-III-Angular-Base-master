@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 29, 2020 at 04:47 PM
+-- Generation Time: Mar 05, 2021 at 03:42 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.3.7
 
@@ -30,16 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `data` (
   `id` int(11) NOT NULL,
-  `country` varchar(128) NOT NULL,
-  `population` int(14) NOT NULL,
-  `cases` int(11) NOT NULL,
-  `deaths` int(11) NOT NULL,
-  `recoveries` int(11) NOT NULL,
-  `recoveryRate` float NOT NULL,
-  `fatalityRate` float NOT NULL,
-  `continent` varchar(12) NOT NULL,
-  `classification` varchar(12) NOT NULL,
-  `date` date NOT NULL
+  `latitudine` float NOT NULL,
+  `longitudine` float NOT NULL,
+  `nomePoi` varchar(30) NOT NULL,
+  `tipoPoi` varchar(30) NOT NULL,
+  `ingresso` varchar(15) NOT NULL,
+  `valutazione` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -60,7 +56,7 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

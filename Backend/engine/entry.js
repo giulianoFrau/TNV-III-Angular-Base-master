@@ -35,19 +35,15 @@ const getEntryById = (req, res) => {
 };
 
 const createEntry = (req, res) => {
-  const {country, population, cases, deaths, recoveries, recoveryRate, fatalityRate, continent, classification, date} = req.body;
+  const { latitudine, longitudine, nomePoi, tipoPoi, ingresso, valutazione } = req.body;
 
   DataEntry.create({
-    country: country,
-    population: population,
-    cases: cases,
-    deaths: deaths,
-    recoveries: recoveries,
-    recoveryRate: recoveryRate,
-    fatalityRate: fatalityRate,
-    continent: continent,
-    classification: classification,
-    date: date
+    latitudine: latitudine,
+    longitudine: longitudine,
+    nomePoi: nomePoi,
+    tipoPoi: tipoPoi,
+    ingresso: ingresso,
+    valutazione: valutazione
   })
     .then(entry => {
       return res.status(201).send(entry);
@@ -59,7 +55,7 @@ const createEntry = (req, res) => {
 
 const editEntry = (req, res) => {
   const entryId = req.params.id;
-  const {country, population, cases, deaths, recoveries, recoveryRate, fatalityRate, continent, classification, date} = req.body;
+  const { latitudine, longitudine, nomePoi, tipoPoi, ingresso, valutazione } = req.body;
 
   DataEntry.findOne({
     where: {
@@ -76,23 +72,19 @@ const editEntry = (req, res) => {
       }
 
       DataEntry.update({
-        country: country,
-        population: population,
-        cases: cases,
-        deaths: deaths,
-        recoveries: recoveries,
-        recoveryRate: recoveryRate,
-        fatalityRate: fatalityRate,
-        continent: continent,
-        classification: classification,
-        date: date
+        latitudine: latitudine,
+        longitudine: longitudine,
+        nomePoi: nomePoi,
+        tipoPoi: tipoPoi,
+        ingresso: ingresso,
+        valutazione: valutazione
       }, {
         where: {
           id: entryId
         }
       })
         .then(updated => {
-          if(updated.pop() === 1) {
+          if (updated.pop() === 1) {
             return res.status(201).send({
               updated: true,
               entryId
@@ -105,8 +97,8 @@ const editEntry = (req, res) => {
           }
         })
         .catch(error => {
-            return res.status(500).send(error);
-          }
+          return res.status(500).send(error);
+        }
         );
     })
     .catch(error => {
@@ -122,7 +114,7 @@ const deleteEntry = (req, res) => {
       id: entryId
     }
   })
-    .then( res => {
+    .then(res => {
       return res.status(204).send({});
     })
     .catch(error => {

@@ -1,7 +1,8 @@
+import { InterfacciaPoi } from './../../models/data.model';
 import { Component, OnInit } from '@angular/core';
 import { Data } from '@angular/router';
 import { DataService } from '../../services/data.service';
-import { CovidData } from '../../models/data.model';
+
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -11,11 +12,11 @@ import { NgForm } from '@angular/forms';
 })
 export class SortByComponent implements OnInit {
 
-  covidData : CovidData[];
+  arrayInterfacciaPoi : InterfacciaPoi[];
   showResult = false;
-  sortOptions = ["deaths", "cases", "recoveries"]
+  sortOptions = ["nomePoi", "valutazione"]
   sortOption : string;
-  orderedItems : CovidData[];
+  orderedItems : InterfacciaPoi[];
 
   constructor(private dataService : DataService) { }
 
@@ -25,7 +26,7 @@ export class SortByComponent implements OnInit {
 
   getEntries(){
     this.dataService.getData().subscribe((response:any)=>{
-      this.covidData = response;
+      this.arrayInterfacciaPoi = response;
      
     })
   }
@@ -33,7 +34,7 @@ export class SortByComponent implements OnInit {
   sortBy(form : NgForm){
       this.sortOption = form.form.value.sort;
       this.showResult=true;
-      this.orderedItems=this.covidData.sort((a,b)=> a[this.sortOption] - 
+      this.orderedItems=this.arrayInterfacciaPoi.sort((a,b)=> a[this.sortOption] - 
       b[this.sortOption])
   }
 

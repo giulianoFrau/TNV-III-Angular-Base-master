@@ -1,6 +1,7 @@
+import { InterfacciaPoi } from './../../models/data.model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CovidData } from '../../models/data.model';
+
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -12,29 +13,30 @@ export class FilterDoubleComponent implements OnInit {
 
   constructor(private dataService : DataService) { }
 
-  continents = ["Europe", "America", "Asia", "Oceania", "Africa", "Antartide"]
-  classifications = ["Very low", "Low" , "Medium" , "High" , "Very high"]
+  arrayValutazioni = ["Mai piu", "Passabile" , "Discreto" , "Bello" , "Indimenticabile"]
+  nomePoi : string
+  valutazione : string
+  
   showResult = false;
-  covidData : CovidData[]; //tutti i dati inseriti fino ad adesso
-  continent : string;
-  classification : string;
+  arrayInterfacciaPoi : InterfacciaPoi[]; //tutti i dati inseriti fino ad adesso
+  
 
   ngOnInit(): void {
     this.getEntries();
   }
 
   filterBy(form : NgForm){
-      this.continent = form.form.value.continent;
-      this.classification = form.form.value.classification;
+      this.nomePoi = form.form.value.nomePoi;
+      this.valutazione = form.form.value.valutazione;
 
-      if(this.continent && this.classification){
+      if(this.nomePoi && this.valutazione){
         this.showResult = true;
       }
   }
 
   getEntries(){
     this.dataService.getData().subscribe( (response : any) => {
-      this.covidData = response;
+      this.arrayInterfacciaPoi = response;
     })
   }
 
