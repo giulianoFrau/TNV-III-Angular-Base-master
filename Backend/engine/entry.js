@@ -55,7 +55,7 @@ const createEntry = (req, res) => {
 
 const editEntry = (req, res) => {
   const entryId = req.params.id;
-  const { latitudine, longitudine, nomePoi, tipoPoi, ingresso, valutazione } = req.body;
+  const { ingresso, valutazione } = req.body;
 
   DataEntry.findOne({
     where: {
@@ -72,10 +72,7 @@ const editEntry = (req, res) => {
       }
 
       DataEntry.update({
-        latitudine: latitudine,
-        longitudine: longitudine,
-        nomePoi: nomePoi,
-        tipoPoi: tipoPoi,
+      
         ingresso: ingresso,
         valutazione: valutazione
       }, {

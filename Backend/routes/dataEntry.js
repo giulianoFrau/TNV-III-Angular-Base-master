@@ -41,13 +41,10 @@ router.post('/', function (req, res, next) {
 
 router.put('/:id', function (req, res, next) {
     const dataId = req.params.id;
-    const { latitudine, longitudine, nomePoi, tipoPoi, ingresso, valutazione} = req.body;
+    const { ingresso, valutazione} = req.body;
 
     DataEntry.update({
-        latitudine: latitudine,
-        longitudine: longitudine,
-        nomePoi: nomePoi,
-        tipoPoi: tipoPoi,
+    
         ingresso: ingresso,
         valutazione: valutazione
     }, {
