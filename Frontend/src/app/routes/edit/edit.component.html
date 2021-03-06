@@ -22,8 +22,7 @@
         <div class="form-group row">
             <label for="valutazione" class="col-sm-2 col-form-label">Valutazione</label>
             <div class="col-sm-10">
-                <select class="form-control" id="valutazione" required [(ngModel)]="dataEntry.valutazione"
-                    name="valutazione">
+                <select class="form-control" id="valutazione" required [(ngModel)]="dataEntry.valutazione" name="valutazione">
                     <option [value]="valutation" *ngFor="let valutation of valutazione">
                         {{valutation}}
                     </option>

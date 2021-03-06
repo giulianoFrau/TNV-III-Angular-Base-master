@@ -17,8 +17,8 @@ export class EditComponent implements OnInit {
   dataEntry: InterfacciaPoi;
 
   
-  ingresso = ["Accesso gratuito", "A pagamento"]
-  valutazione = ["Mai piu", "Passabile" , "Discreto" , "Bello" , "Indimenticabile"]
+  ingresso = ["Libero", "A pagamento"," Offerta"]
+  valutazione = ["Mai piu", "Passabile" , "Discreto" , "Bello" , "Indimenticabile"];
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];

@@ -38,10 +38,6 @@ export class DataService {
   editEntry = (data: InterfacciaPoi) => {
     return this.http.put(this.baseURL + '/' + data.id, {
       "id": data.id,
-      "latitudine": data.latitudine,
-      "longitudine": data.longitudine,
-      "nomePoi": data.nomePoi,
-      "tipoPoi": data.tipoPoi,
       "ingresso": data.ingresso,
       "valutazione": data.valutazione,
     });

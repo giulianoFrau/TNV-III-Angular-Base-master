@@ -8,7 +8,7 @@ module.exports = (sequelize, DataType) => {
     nomePoi: DataType.STRING(30),
     tipoPoi: DataType.STRING(30),
     ingresso: DataType.STRING(15),
-    valutazione: DataType.STRING(15),
+    valutazione: DataType.STRING(15)
   }, {
     freezeTableName: true,
     timestamps: false,

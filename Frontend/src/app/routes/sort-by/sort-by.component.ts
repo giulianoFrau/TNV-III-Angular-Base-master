@@ -13,8 +13,7 @@ import { NgForm } from '@angular/forms';
 export class SortByComponent implements OnInit {
 
   arrayInterfacciaPoi : InterfacciaPoi[];
-  showResult = false;
-  sortOptions = ["nomePoi", "valutazione"]
+  sortOptions = ["Nome POI","latitudine"]
   sortOption : string;
   orderedItems : InterfacciaPoi[];
 
@@ -33,7 +32,7 @@ export class SortByComponent implements OnInit {
 
   sortBy(form : NgForm){
       this.sortOption = form.form.value.sort;
-      this.showResult=true;
+      this.orderedItems=this.arrayInterfacciaPoi.sort((a,b)=> a.nomePoi.localeCompare(b.nomePoi));
       this.orderedItems=this.arrayInterfacciaPoi.sort((a,b)=> a[this.sortOption] - 
       b[this.sortOption])
   }

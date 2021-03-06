@@ -20,7 +20,7 @@ export class AddComponent implements OnInit {
   dataEntry : InterfacciaPoi
 
   tipoPoi = ["Spiaggia", "Monumento", "Museo", "Stadio", "Belvedere", "Altro"]
-  ingresso = ["Accesso gratuito", "A pagamento"]
+  ingresso = ["Libero", "A pagamento"," Offerta"]
   valutazione = ["Mai piu", "Passabile" , "Discreto" , "Bello" , "Indimenticabile"]
 
   onSubmit(form : NgForm){

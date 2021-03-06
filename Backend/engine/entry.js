@@ -35,7 +35,7 @@ const getEntryById = (req, res) => {
 };
 
 const createEntry = (req, res) => {
-  const { latitudine, longitudine, nomePoi, tipoPoi, ingresso, valutazione } = req.body;
+  const {latitudine, longitudine, nomePoi, tipoPoi, ingresso, valutazione} = req.body;
 
   DataEntry.create({
     latitudine: latitudine,
