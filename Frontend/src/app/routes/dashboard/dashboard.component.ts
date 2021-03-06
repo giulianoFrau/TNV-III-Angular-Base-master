@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './../../services/data.service';
 import { InterfacciaPoi } from 'src/app/models/data.model';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   interfacciaPoiLoader=false;
-  constructor( private dataService: DataService, private router : Router) { }
+  constructor( private dataService: DataService, private router : Router,private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.getEntries()
@@ -32,7 +33,10 @@ export class DashboardComponent implements OnInit {
   goToDetails(id){
     this.router.navigateByUrl('/details/' + id);
   }
-
+  logout() {
+    this.loginService.isLogged=false;
+    this.router.navigate(['/login']);
+    }
   
 
 }

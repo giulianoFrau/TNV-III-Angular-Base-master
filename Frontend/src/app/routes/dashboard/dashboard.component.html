@@ -14,6 +14,9 @@
     <button class="btn btn-primary mb-3" [routerLink]='["/sortBy"]'>Sort by </button>
     
     <button class="btn btn-primary mb-3" [routerLink]='["/apicorona"]'>Api</button>
+  
+      <button class="btn btn-primary mb-3" (click)="logout()">Logout </button>
+    
 
   </div>
 
@@ -21,19 +24,25 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Latitudine</th>
+        <th scope="col">Longitudine</th>
         <th scope="col">Nome</th>
         <th scope="col">Tipo</th>
+        <th scope="col">Ingresso</th>
         <th scope="col">Valutazione</th>
       </tr>
     </thead>
     <tbody>
       <tr class="pointer" *ngFor="let entry of arrayInterfacciaPoi ; let i = index" (click)="goToDetails(entry.id)">
         <th scope="row"> {{i + 1}}</th>
+        <td>{{entry.latitudine}}</td>
+        <td>{{entry.longitudine}}</td>
         <td>{{entry.nomePoi}}</td>
         <td>{{entry.tipoPoi}}</td>
+        <td>{{entry.ingresso}}</td>
         <td>{{entry.valutazione}}</td>
       </tr>
     </tbody>
   </table>
 </div>
-<app-loadingpage ></app-loadingpage>
+
