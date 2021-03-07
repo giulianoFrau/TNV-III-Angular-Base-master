@@ -4,15 +4,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
 
+
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  latitudine:number;
+  longitudine: number;
+  zoom:number;
+  mapTypeId:string;
 
   constructor(private route: ActivatedRoute, private dataService: DataService, 
-    private router : Router) { }
+    private router : Router ) {  
+      
+      this.zoom=5;
+      this.mapTypeId='hybrid';}
 
   dataEntry: InterfacciaPoi;
   id: number;
@@ -24,7 +33,10 @@ export class DetailsComponent implements OnInit {
 
   fetchEntry(){
     this.dataService.getEntry(this.id).subscribe( (res: any ) => {
+   
       this.dataEntry = res;
+      this.latitudine= this.dataEntry.latitudine;
+      this.longitudine=this.dataEntry.longitudine;
     })
   }
 

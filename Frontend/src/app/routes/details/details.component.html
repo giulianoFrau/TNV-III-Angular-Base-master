@@ -1,5 +1,10 @@
-<div *ngIf="dataEntry != null " class="container">
 
+
+
+<div *ngIf="dataEntry != null " class="container">
+    <agm-map [latitude]="latitudine" [longitude]="longitudine" [zoom]="zoom" [mapTypeId]="mapTypeId">
+<agm-marker [latitude]="latitudine" [longitude]="longitudine"></agm-marker>
+    </agm-map>
     <div class="row p-4 my-2 mx-1 border shadow">
         <button class="btn btn-primary mr-5"[routerLink]="['/dashboard']">Back</button>
         <h3>Details</h3>

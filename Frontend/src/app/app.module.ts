@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -21,7 +20,7 @@ import { FiltronomevalutazionePipe } from './pipes/filtronomevalutazione.pipe';
 import { LoginService } from './services/login.service';
 import { LoginComponent } from './routes/login/login.component';
 import { RegistrazioneComponent } from './routes/registrazione/registrazione.component';
-
+import {AgmCoreModule} from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +42,10 @@ import { RegistrazioneComponent } from './routes/registrazione/registrazione.com
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBfrin6U4dHd39-U_0mVED90lf1y0WC-Gw'
+    })
   ],
   providers: [
     DataService, 
