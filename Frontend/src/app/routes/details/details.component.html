@@ -1,15 +1,23 @@
-
-
-
 <div *ngIf="dataEntry != null " class="container">
+
+
+
     <agm-map [latitude]="latitudine" [longitude]="longitudine" [zoom]="zoom" [mapTypeId]="mapTypeId">
-<agm-marker [latitude]="latitudine" [longitude]="longitudine"></agm-marker>
+        <agm-marker  [latitude]="latitudine" [longitude]="longitudine">
+        <agm-info-window>
+ nomeNazione:{{nomePaese}} 
+
+        </agm-info-window>
+    </agm-marker>
     </agm-map>
+
+
+
     <div class="row p-4 my-2 mx-1 border shadow">
-        <button class="btn btn-primary mr-5"[routerLink]="['/dashboard']">Back</button>
+        <button class="btn btn-primary mr-5" [routerLink]="['/dashboard']">Back</button>
         <h3>Details</h3>
     </div>
-   
+
     <div class="mt-5 p-4">
         <ul class="list-group">
             <li class="list-group-item">Id : {{ dataEntry.id }}</li>
@@ -19,8 +27,8 @@
             <li class="list-group-item">Tipo POI : {{dataEntry.tipoPoi}}</li>
             <li class="list-group-item">Ingresso : {{dataEntry.ingresso}}</li>
             <li class="list-group-item">Valutazione : {{dataEntry.valutazione}}</li>
-            
-          </ul>
+
+        </ul>
     </div>
 
     <div class="row">

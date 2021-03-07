@@ -21,6 +21,8 @@ import { LoginService } from './services/login.service';
 import { LoginComponent } from './routes/login/login.component';
 import { RegistrazioneComponent } from './routes/registrazione/registrazione.component';
 import {AgmCoreModule} from '@agm/core';
+import { PaesiService } from './services/paesi.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,8 @@ import {AgmCoreModule} from '@agm/core';
   providers: [
     DataService, 
     ApiserviceService,
-    LoginService
+    LoginService,
+    PaesiService
   ],
   bootstrap: [AppComponent]
 })
