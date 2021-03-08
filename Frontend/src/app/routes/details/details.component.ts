@@ -33,8 +33,9 @@ export class DetailsComponent implements OnInit {
   popolazione: string;
   capitale: string;
 
+
   ngOnInit(): void {
-    console.log('ciao');
+   
     this.id = this.route.snapshot.params['id'];
 
     this.fetchEntry();
@@ -79,6 +80,7 @@ export class DetailsComponent implements OnInit {
         this.popolazione = this.paesi[i].population;
         this.regione = this.paesi[i].region;
       }
+      
     }
   }
 }
