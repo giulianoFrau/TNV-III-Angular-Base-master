@@ -12,6 +12,7 @@
         <p>Capital :{{ capitale }}</p>
         <p>Region :{{ regione }}</p>
         <p>Population :{{ popolazione }}</p>
+        <p>code :{{ code }}</p>
       </agm-info-window>
     </agm-marker>
   </agm-map>
@@ -45,4 +46,19 @@
       Modifica
     </button>
   </div>
+ <br>
+ 
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Morti</th>  
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer">  
+        <td>{{morti}}</td>
+      </tr>
+  
+  </table>
 </div>

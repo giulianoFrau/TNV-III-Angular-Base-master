@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { PaesiService } from '../../services/paesi.service';
+import { ApiserviceService } from '../../services/apiservice.service';
+import { ApiCountry, ApiCountryData } from '../../models/apicountry.model';
 
 @Component({
   selector: 'app-details',
@@ -10,8 +12,7 @@ import { PaesiService } from '../../services/paesi.service';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent implements OnInit {
-  latitudine: number;
-  longitudine: number;
+
   zoom: number;
   mapTypeId: string;
 
@@ -19,12 +20,14 @@ export class DetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private dataService: DataService,
     private router: Router,
-    private paesiService: PaesiService
+    private paesiService: PaesiService,
+    private coronaService: ApiserviceService
   ) {
     this.zoom = 6;
     this.mapTypeId = 'hybrid';
   }
-
+  latitudine: number;
+  longitudine: number;
   dataEntry: InterfacciaPoi;
   id: number;
   paesi: any[];
@@ -32,13 +35,14 @@ export class DetailsComponent implements OnInit {
   regione: string;
   popolazione: string;
   capitale: string;
-
-
+  morti: number;
+  covid: ApiCountryData;
+  code: any;
   ngOnInit(): void {
-   
-    this.id = this.route.snapshot.params['id'];
 
+    this.id = this.route.snapshot.params['id'];
     this.fetchEntry();
+
   }
 
   fetchEntry() {
@@ -46,15 +50,27 @@ export class DetailsComponent implements OnInit {
       this.dataEntry = res;
       this.latitudine = this.dataEntry.latitudine;
       this.longitudine = this.dataEntry.longitudine;
-      this.nomePaese = ' ';
       this.paesiService
         .getAll()
         .then((paesi) => {
           this.paesi = paesi;
+
           this.setNomePaese();
+          this.fetchCovid();
         })
         .catch((errore) => console.log(errore));
-    });
+
+    }
+    );
+  }
+
+  fetchCovid() {
+    this.coronaService.getDataByPaeseCode(this.code)
+      .then((response) => {
+        this.covid = response.data;
+        this.setCovid();
+      })
+      .catch((errore) => console.log(errore));
   }
 
   delete() {
@@ -79,8 +95,15 @@ export class DetailsComponent implements OnInit {
         this.capitale = this.paesi[i].capital;
         this.popolazione = this.paesi[i].population;
         this.regione = this.paesi[i].region;
+        this.code = this.paesi[i].alpha2Code;
       }
-      
     }
+  }
+
+  setCovid() {
+
+      this.morti = this.covid.latest_data.deaths;
+    
+
   }
 }

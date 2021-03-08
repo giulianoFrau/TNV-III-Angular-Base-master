@@ -1,6 +1,9 @@
 export interface ApiCountry{
     data : ApiCountryData
 }
+export interface ApiCountryList{
+    data : ApiCountryData[]
+}
 
 export interface ApiCountryData{
     name : string,

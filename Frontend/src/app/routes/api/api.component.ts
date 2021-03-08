@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../../services/apiservice.service';
-import { ApiCountry } from '../../models/apicountry.model';
+import { ApiCountry, ApiCountryList, ApiCountryData } from '../../models/apicountry.model';
 
 @Component({
   selector: 'app-api',
@@ -10,8 +10,7 @@ import { ApiCountry } from '../../models/apicountry.model';
 export class ApiComponent implements OnInit {
 
   constructor(private apiService: ApiserviceService) { }
-
-  countries : ApiCountry;
+  dataArray:ApiCountryData[];
   afghanistanData;
   afghanistanDataArray : Array<ApiCountry>=[];
 
@@ -19,12 +18,12 @@ export class ApiComponent implements OnInit {
   }
 
   getCountries(){
-    this.apiService.getCountries().subscribe((data: ApiCountry) =>
+    this.apiService.getPaese().subscribe((response: ApiCountryList) =>
       {
-        this.countries = data;
+        this.dataArray= response.data;
       },
       err => console.log(err),
-      () => console.log("done loading countries",this.countries)
+      () => console.log("done loading countries",)
     )
   }
 

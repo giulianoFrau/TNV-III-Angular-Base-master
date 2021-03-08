@@ -1,5 +1,5 @@
-<button (click)="getCountries()">GET COUNTRIES</button>
-<button (click)="getAfghanistan()">GET AFGHANISTAN DATA</button>
+<button (click)="getCountries()">GET COUNTRIES</button> 
+
 
 <div class="container p-5">
     <h1 class="text-center mb-5">
@@ -10,18 +10,18 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">Population</th>
+          <th scope="col">Country</th>
           <th scope="col">Code</th>
           <th scope="col">Recovered</th>
           <th scope="col">Deaths</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of afghanistanDataArray">
-          <th scope="row"> {{entry.data.population}}</th>
-          <td>{{entry.data.code}}</td>
-          <td>{{entry.data.latest_data.recovered}}</td>
-          <td>{{entry.data.latest_data.deaths}}</td>
+        <tr class="pointer" *ngFor="let entry of dataArray">
+          <th scope="row"> {{entry.name}}</th>
+          <td>{{entry.code}}</td>
+          <td>{{entry.latest_data.recovered}}</td>
+          <td>{{entry.latest_data.deaths}}</td>
         </tr>
       </tbody>
     </table>
