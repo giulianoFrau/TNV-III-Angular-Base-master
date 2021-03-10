@@ -24,6 +24,8 @@ import {AgmCoreModule} from '@agm/core';
 import { PaesiService } from './services/paesi.service';
 import { SearchService } from './services/search.service';
 
+import { HeaderloginComponent } from './components/headerlogin/headerlogin.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { SearchService } from './services/search.service';
     ApiComponent,
     FiltronomevalutazionePipe,
     LoginComponent,
-    RegistrazioneComponent
+    RegistrazioneComponent,
+    HeaderloginComponent
   ],
   imports: [
     BrowserModule,

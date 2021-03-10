@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="container p-5">
     <div class="row">
         <button class="btn btn-primary mr-5" [routerLink]="['/dashboard']">Indietro</button>
@@ -18,7 +20,7 @@
 
     <button class="btn btn-primary mb-3" (click)="sortBy(form)">Ordina</button>
     
-    <table class="table" >
+    <table class="table table table-hover border shadow" >
         <thead class="thead-dark">
           <tr>
             <th scope="col">Latitudine</th>
@@ -26,8 +28,7 @@
             <th scope="col">Nome POI</th>
             <th scope="col">Tipo POI</th>
             <th scope="col">Ingresso</th>
-            <th scope="col">Valutazione</th>
-        
+            <th scope="col">Valutazione</th>       
           </tr>
         </thead>
         <tbody>
@@ -38,8 +39,6 @@
             <td>{{entry.tipoPoi}}</td>
             <td>{{entry.ingresso}}</td>
             <td>{{entry.valutazione}}</td>
-            
-
           </tr>
         </tbody>
       </table>

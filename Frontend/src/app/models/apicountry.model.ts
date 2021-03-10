@@ -1,13 +1,17 @@
 export interface ApiCountry{
     data : ApiCountryData
 }
+export interface ApiCountryList{
+    data : ApiCountryData[]
+}
 
 export interface ApiCountryData{
     name : string,
     code: string,
     coordinates: Coordinates,
     population: number,
-    latest_data : LatestData
+    latest_data : LatestData,
+    updated_at:Date
 }
 
 export interface Coordinates{

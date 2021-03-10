@@ -1,0 +1,15 @@
+.thead-dark th{
+    background-color:orange;
+}
+
+.table-hover:hover{
+    color: orange;
+}
+
+table{
+    border: 1px solid black;
+}
+
+button{
+    border-radius: 20px;
+}
