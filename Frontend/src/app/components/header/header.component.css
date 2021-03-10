@@ -1,7 +1,7 @@
 .masthead {
     height: 50vh;
     min-height: 50%;
-    background-image: url('/assets/img/coronavirus-img.jpg');
+    background-image: url('/assets/img/travel.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,12 +20,13 @@
   }
   
   ._21-text{
+    color:rgba(0, 0, 255, 0.89);
     font-weight: 600;
     font-size: 5rem;
   }
   
   .logo-divider{
-    border-bottom: 4px solid rgba(255, 0, 0, 0.89);
+    border-bottom: 4px solid rgba(0, 0, 255, 0.89);
     width: 20rem;
     margin: 0;
   }
@@ -49,3 +50,13 @@
     border-top: 1px solid red;
     border-bottom: 1px solid red;
   }
+  
+  .text{
+    color:orange
+  }
+
+  button{
+    border-radius: 20px;
+  }
+
+  

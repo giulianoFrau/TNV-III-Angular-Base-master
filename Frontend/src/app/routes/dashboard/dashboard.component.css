@@ -2,3 +2,25 @@
     cursor: pointer;
 }
 
+.thead-dark th{
+    background-color:orange;
+}
+
+.table-hover:hover{
+    color: orange;
+}
+
+table{
+    border: 1px solid black;
+}
+
+
+h1{
+    font-style: italic;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+button{
+    border-radius: 20px;
+}
