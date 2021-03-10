@@ -11,6 +11,8 @@ import { LoginComponent } from './routes/login/login.component';
 import { RegistrazioneComponent } from './routes/registrazione/registrazione.component';
 
 
+
+
 const routes: Routes = [
   { path: "", redirectTo : '/login', pathMatch: 'full' },
   { path: "dashboard", component : DashboardComponent },
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: "sortBy", component: SortByComponent},
   { path: "apicorona", component:ApiComponent},
   { path: "login", component: LoginComponent},
-  { path: "registrazione", component:RegistrazioneComponent}
+  { path: "registrazione", component:RegistrazioneComponent},
+  
+
 ];
 
 @NgModule({

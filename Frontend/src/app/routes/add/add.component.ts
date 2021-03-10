@@ -1,8 +1,12 @@
+import { searchCountry } from './../../models/searchcountry.model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import { InterfacciaPoi } from '../../models/data.model';
+
+import { SearchService } from '../../services/search.service';
+
 
 @Component({
   selector: 'app-add',
@@ -11,11 +15,36 @@ import { InterfacciaPoi } from '../../models/data.model';
 })
 export class AddComponent implements OnInit {
 
-  constructor(private dataService: DataService, private router: Router) { }
+  interfacciaCountry:searchCountry;
+  searchCountry:searchCountry[];
+  country:string;
+  popolazione:Number;
+  latitudine: number;
+  longitudine: number;
+  risultato:string;
+  name:string;
+  showResult = false;
 
-  ngOnInit(): void {
-    
+  
+  constructor(private dataService: DataService, private router: Router,
+    private SearchService:SearchService) { }
+
+  ngOnInit() {
+    this.SearchService.getCountries()
+    .subscribe(
+      data=>{
+        this.searchCountry=data;
+      }
+    )
   }
+  Search(){
+    this.searchCountry = this.searchCountry.filter(res => {
+      return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      })
+  if(this.name){
+    this.showResult = true;
+  }
+}
 
   dataEntry : InterfacciaPoi
 
@@ -37,4 +66,5 @@ export class AddComponent implements OnInit {
     //}
     )
   }
+ 
 }

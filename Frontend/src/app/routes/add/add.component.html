@@ -5,10 +5,41 @@
     </div>
 
     <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
-
+       
+        <div class="input-group rounded">
+            <input type="search" class="form-control rounded" name="country" [(ngModel)]="name" (ngModelChange)="Search()" placeholder="Ricerca le tue coordinte" aria-label="Search"
+              aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        
+          <button style="margin:10px" class="btn btn-primary mb-3" onClick="history.go(0);" >Premi per fare una nuova ricerca</button>
    
-
-
+          <table class="table" *ngIf="showResult">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Country</th>
+                <th scope="col">Code</th>
+                <th scope="col">Latitudine</th>
+                <th scope="col">Longitudine</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pointer" *ngFor="let entry of searchCountry">
+                <th scope="row"> {{entry.name}}</th>
+                <th scope="row"> {{entry.alpha2Code}}</th>
+                <td>{{entry.latlng[0]}}</td>
+                <td>{{entry.latlng[1]}}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+   
+    <br><br>
+    
+       
+  
         <div class="form-group row">
             <label for="latitudine" class="col-sm-2 col-form-label">Latitudine</label>
             <div class="col-sm-10">
