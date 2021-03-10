@@ -13,3 +13,8 @@ table{
 button{
     border-radius: 20px;
 }
+
+.mr-5{
+    position: relative;
+    left:1%;
+} 

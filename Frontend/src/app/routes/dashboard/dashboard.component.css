@@ -24,3 +24,26 @@ h1{
 button{
     border-radius: 20px;
 }
+.fa-info-circle{
+    display: inline-block;
+    width: 100%;
+    padding-right: 15px;
+}
+#center{
+    text-align: center;
+}
+
+.add{
+    position:relative;
+    right: 30%;
+}
+
+.filter{
+    position:relative;
+    right: 21%;
+}
+
+.sort{
+    position:relative;
+    right: 9%;
+}

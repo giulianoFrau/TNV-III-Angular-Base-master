@@ -1,5 +1,16 @@
 .link{
 font-family: sans-serif;
 font-size: small;
-
 }
+
+.mr-5{
+    border-radius: 20px;
+}
+
+.fa-redo{
+font-size: 30px;
+color: grey;
+position: relative;
+left: 97%;
+}
+

@@ -6,9 +6,9 @@
 
 footer { 
     width:100%; 
-    background-color:#F8F9FA; 
+    background-color:orange; 
     min-height:150px; 
-    padding:10px 0px 25px 0px ;
+   
 }
 
 .pt2 { 
@@ -42,7 +42,8 @@ footer p { font-size:13px;
 }
 
 .footer_ul_amrc li a:hover{ 
-    color:orange; text-decoration:none;
+    color:wheat; 
+    text-decoration:none;
 }
 
 .fleft { 
@@ -71,10 +72,7 @@ footer p { font-size:13px;
     margin-top:5px;
 }
 
-.bottom_border { 
-    border-bottom:1px solid #323f45; 
-    padding-bottom:20px;
-}
+
 
 .foote_bottom_ul_amrc {
     list-style-type:none;
@@ -123,5 +121,31 @@ footer p { font-size:13px;
 }
 
 .fa{
-    color: orange;
+    color: black;
+}
+
+#small{
+    padding:10px 0px 25px 0px ;
+    background-color:#e6af19;
+    border-top: 1px solid black;
+    padding-top: 15px; 
+}
+
+.fa-home{
+    color: black;
+    font-size: 30px;
+    padding-top: 10px;
+}
+.fa-facebook-square{
+    color: black;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.fa-phone-square{
+    color: black;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
 }

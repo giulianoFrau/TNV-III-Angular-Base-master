@@ -7,11 +7,9 @@
 
   <div class="text-right">
     <button class="btn btn-primary mb-3 add border shadow" [routerLink]='["/add"]'>Aggiungi una destinazione</button>
-    <button class="btn btn-primary mb-3 filter border shadow" [routerLink]='["/filterdouble"]'>Filtra</button>
-    <button class="btn btn-primary mb-3 sort border shadow" [routerLink]='["/sortBy"]'>Ordina</button>
-    <button class="btn btn-primary mb-3 api border shadow" [routerLink]='["/apicorona"]'>Api</button>
-    <!--button da eliminare perche sostituito con equivalente in navbar-->
-    <!--<button class="btn btn-primary mb-3 logout" (click)="logout()">Esci</button>-->
+    <button class="btn btn-primary mb-3 filter border shadow" [routerLink]='["/filterdouble"]'>Filtra i tuoi POI</button>
+    <button class="btn btn-primary mb-3 sort border shadow" [routerLink]='["/sortBy"]'>Ordina  i tuoi POI</button>
+    <button class="btn btn-primary mb-3 api border shadow" [routerLink]='["/apicorona"]'>Situazione Pandemica Globale</button>
   </div>
 
   <table class="table table table-hover border shadow">
@@ -24,6 +22,7 @@
         <th scope="col">Tipo POI</th>
         <th scope="col">Ingresso</th>
         <th scope="col">Valutazione</th>
+        <th scope="col">Info</th>
       </tr>
     </thead>
     <tbody>
@@ -35,6 +34,7 @@
         <td>{{entry.tipoPoi}}</td>
         <td>{{entry.ingresso}}</td>
         <td>{{entry.valutazione}}</td>
+        <td id="center"><i class="fas fa-info-circle"></i></td>
       </tr>
     </tbody>
   </table>
