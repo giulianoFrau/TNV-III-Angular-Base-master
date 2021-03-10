@@ -1,33 +1,27 @@
+<app-header></app-header>
+
 <div class="container p-5" >
-  <h1 class="text-center mb-5">
-    Covid-21 Tracker
-  </h1>
+  <!--<h1 class="text-center mb-5">
+   <b> Covid-21 Travel</b>
+  </h1>-->
 
   <div class="text-right">
-    
-
-
-
-      <button class="btn btn-primary mb-3" [routerLink]='["/add"]'>add</button>
-    <button class="btn btn-primary mb-3" [routerLink]='["/filterdouble"]'>Filter Double</button>
-    
-    <button class="btn btn-primary mb-3" [routerLink]='["/sortBy"]'>Sort by </button>
-    
-    <button class="btn btn-primary mb-3" [routerLink]='["/apicorona"]'>Api</button>
-  
-      <button class="btn btn-primary mb-3" (click)="logout()">Logout </button>
-    
-
+    <button class="btn btn-primary mb-3 add border shadow" [routerLink]='["/add"]'>Aggiungi una destinazione</button>
+    <button class="btn btn-primary mb-3 filter border shadow" [routerLink]='["/filterdouble"]'>Filtra</button>
+    <button class="btn btn-primary mb-3 sort border shadow" [routerLink]='["/sortBy"]'>Ordina</button>
+    <button class="btn btn-primary mb-3 api border shadow" [routerLink]='["/apicorona"]'>Api</button>
+    <!--button da eliminare perche sostituito con equivalente in navbar-->
+    <!--<button class="btn btn-primary mb-3 logout" (click)="logout()">Esci</button>-->
   </div>
 
-  <table class="table">
+  <table class="table table table-hover border shadow">
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Latitudine</th>
         <th scope="col">Longitudine</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Tipo</th>
+        <th scope="col">Nome POI</th>
+        <th scope="col">Tipo POI</th>
         <th scope="col">Ingresso</th>
         <th scope="col">Valutazione</th>
       </tr>

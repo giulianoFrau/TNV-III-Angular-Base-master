@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   nomeUtente: string;
   password: string;
   arrayUtenti: Utente[];
+  
   constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
     if (checkLogin) {
       this.router.navigate(['/dashboard']);
     } else {
-      alert("errore");
+      alert("Inserisci credenziali corrette oppure registrati");
     }
   }
 }

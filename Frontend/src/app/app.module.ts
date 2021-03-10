@@ -21,6 +21,7 @@ import { FiltronomevalutazionePipe } from './pipes/filtronomevalutazione.pipe';
 import { LoginService } from './services/login.service';
 import { LoginComponent } from './routes/login/login.component';
 import { RegistrazioneComponent } from './routes/registrazione/registrazione.component';
+import { HeaderloginComponent } from './components/headerlogin/headerlogin.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RegistrazioneComponent } from './routes/registrazione/registrazione.com
     ApiComponent,
     FiltronomevalutazionePipe,
     LoginComponent,
-    RegistrazioneComponent
+    RegistrazioneComponent,
+    HeaderloginComponent
   ],
   imports: [
     BrowserModule,

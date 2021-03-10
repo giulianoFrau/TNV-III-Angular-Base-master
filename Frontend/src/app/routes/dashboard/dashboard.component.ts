@@ -33,10 +33,12 @@ export class DashboardComponent implements OnInit {
   goToDetails(id){
     this.router.navigateByUrl('/details/' + id);
   }
+
+  /*Metodo da eliminare perchè abbiamo spostato il tasto Esci nella navbar, quindi in dashboard non esiste piu
   logout() {
     this.loginService.isLogged=false;
     this.router.navigate(['/login']);
     }
-  
+  */
 
 }
