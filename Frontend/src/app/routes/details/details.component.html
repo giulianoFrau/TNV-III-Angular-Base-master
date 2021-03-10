@@ -49,16 +49,29 @@
  <br>
  
 
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Morti</th>  
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="pointer">  
-        <td>{{morti}}</td>
-      </tr>
-  
-  </table>
+ <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nazione</th>
+      <th scope="col">Totale Morti</th>
+      <th scope="col">Casi totali confermati</th>
+      <th scope="col">Tasso di mortalità</th>
+      <th scope="col">Casi per milioni di abitanti</th>
+      <th scope="col">Ultimo aggiornamento</th>
+      <th scope="col">grado di rischio</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="pointer" >
+      <th scope="row"> {{nazione}}</th>
+      <td>{{morti}}</td>
+      <td>{{totCasi}}</td>
+      <td>{{tassoMortalita}} %</td>
+      <td>{{casiAbitanti}} </td>
+      <td>{{aggiornamento }} </td>
+      <td>{{rischio}} </td>
+    </tr>
+
+</table>
 </div>

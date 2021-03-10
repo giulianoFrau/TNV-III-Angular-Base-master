@@ -10,7 +10,8 @@ export interface ApiCountryData{
     code: string,
     coordinates: Coordinates,
     population: number,
-    latest_data : LatestData
+    latest_data : LatestData,
+    updated_at:Date
 }
 
 export interface Coordinates{

@@ -1,22 +1,24 @@
-<div class="container p-5" >
+<div class="container p-5">
   <h1 class="text-center mb-5">
-   POI ENTRY
+    POI ENTRY
   </h1>
 
   <div class="text-right">
-    
+    <marquee>
+      <p>
+        Benvenuti nel sito di Giuliano,Anna,Giuseppe e Fabrizio
+      </p>
+    </marquee>
 
-
-
-      <button class="btn btn-primary mb-3" [routerLink]='["/add"]'>add</button>
+    <button class="btn btn-primary mb-3" [routerLink]='["/add"]'>add</button>
     <button class="btn btn-primary mb-3" [routerLink]='["/filterdouble"]'>Filter Double</button>
-    
+
     <button class="btn btn-primary mb-3" [routerLink]='["/sortBy"]'>Sort by </button>
-    
+
     <button class="btn btn-primary mb-3" [routerLink]='["/apicorona"]'>Api</button>
-  
-      <button class="btn btn-primary mb-3" (click)="logout()">Logout </button>
-    
+
+    <button class="btn btn-primary mb-3" (click)="logout()">Logout </button>
+
 
   </div>
 
@@ -45,4 +47,3 @@
     </tbody>
   </table>
 </div>
-

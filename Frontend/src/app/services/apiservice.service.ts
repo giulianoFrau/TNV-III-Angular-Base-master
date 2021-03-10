@@ -11,10 +11,7 @@ export class ApiserviceService {
   constructor(private http:HttpClient) { 
   }
 
-  /* metodo creato da me per la visualizzazione sulla entry corrente*/
-  getCountries():Promise<ApiCountryList>{
-    return this.http.get<ApiCountryList>(this.baseUrl+'/countries').toPromise();
-  }
+
 
   getDataByPaeseCode(code):Promise<ApiCountry>{
     return this.http.get<ApiCountry> (this.baseUrl+'/countries/'+ code).toPromise();
@@ -25,8 +22,5 @@ export class ApiserviceService {
     return this.http.get<ApiCountryList>(this.baseUrl+'/countries');
   }
 
-  getAfghanistanData(){
-    return this.http.get<ApiCountry>(this.baseUrl+'/countries'+'/AF');
-  }
 
 }

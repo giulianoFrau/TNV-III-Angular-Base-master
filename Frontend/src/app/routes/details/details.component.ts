@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { PaesiService } from '../../services/paesi.service';
 import { ApiserviceService } from '../../services/apiservice.service';
-import { ApiCountry, ApiCountryData } from '../../models/apicountry.model';
+import {  ApiCountryData } from '../../models/apicountry.model';
 
 @Component({
   selector: 'app-details',
@@ -38,6 +38,14 @@ export class DetailsComponent implements OnInit {
   morti: number;
   covid: ApiCountryData;
   code: any;
+  nazione:string;
+  totAbitanti:number;
+  totCasi:number;
+  tassoMortalita:number;
+  casiAbitanti:number;
+  aggiornamento:Date;
+  rischio:string;
+
   ngOnInit(): void {
 
     this.id = this.route.snapshot.params['id'];
@@ -54,7 +62,6 @@ export class DetailsComponent implements OnInit {
         .getAll()
         .then((paesi) => {
           this.paesi = paesi;
-
           this.setNomePaese();
           this.fetchCovid();
         })
@@ -101,9 +108,17 @@ export class DetailsComponent implements OnInit {
   }
 
   setCovid() {
-
+     this.nazione=this.covid.name;
       this.morti = this.covid.latest_data.deaths;
-    
+      this.totCasi= this.covid.latest_data.confirmed;
+      this.tassoMortalita=this.covid.latest_data.calculated.death_rate;
+      this.casiAbitanti=this.covid.latest_data.calculated.cases_per_million_population;
+      this.aggiornamento=this.covid.updated_at;
+      if(this.tassoMortalita<5){
+        this.rischio="rischio alto"
+      }else{
+        this.rischio="rischio basso"
+      }
 
   }
 }

@@ -1,28 +1,43 @@
-<button (click)="getCountries()">GET COUNTRIES</button> 
-
-
 <div class="container p-5">
-    <h1 class="text-center mb-5">
-      Afghanistan Data
-    </h1>
+  <button id="dash" class="btn btn-primary mb-3" [routerLink]='["/dashboard"]'>Torna indietro alla dashboard </button>
 
-  
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Country</th>
-          <th scope="col">Code</th>
-          <th scope="col">Recovered</th>
-          <th scope="col">Deaths</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="pointer" *ngFor="let entry of dataArray">
-          <th scope="row"> {{entry.name}}</th>
-          <td>{{entry.code}}</td>
-          <td>{{entry.latest_data.recovered}}</td>
-          <td>{{entry.latest_data.deaths}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <button class="btn btn-primary mb-3" onClick="history.go(0);">Ricarica la tabella</button>
+  <h1 class="text-center mb-5">
+    Situazione mondiale covid
+  </h1>
+  <nav class="navbar">
+    <input class="form-control" type="text" name="country" [(ngModel)]="name" (ngModelChange)="Search()"
+      placeholder="Inserisci la nazione">
+  </nav>
+
+
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nazione</th>
+        <th scope="col">Totale abitanti</th>
+        <th scope="col">Totale Morti</th>
+        <th scope="col">Casi Confermati da inizio emergenza</th>
+        <th scope="col">Tasso di mortalità</th>
+        <th scope="col">Casi per milioni di abitanti</th>
+        <th scope="col">Ultimo aggiornamento</th>
+        <th scope="col">rischio</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of dataArray">
+        <th scope="row"> {{entry.name}}</th>
+        <td>{{entry.population}}</td>
+        <td>{{entry.latest_data.deaths}}</td>
+        <td>{{entry.latest_data.confirmed}}</td>
+        <td>{{entry.latest_data.calculated.death_rate}} %</td>
+        <td>{{entry.latest_data.calculated.cases_per_million_population}} </td>
+        <td>{{entry.updated_at}}</td>
+        <td>{{rischio}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

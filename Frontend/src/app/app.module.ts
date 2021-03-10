@@ -23,6 +23,7 @@ import { RegistrazioneComponent } from './routes/registrazione/registrazione.com
 import {AgmCoreModule} from '@agm/core';
 import { PaesiService } from './services/paesi.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { PaesiService } from './services/paesi.service';
     ApiComponent,
     FiltronomevalutazionePipe,
     LoginComponent,
-    RegistrazioneComponent
+    RegistrazioneComponent,
+
   ],
   imports: [
     BrowserModule,
