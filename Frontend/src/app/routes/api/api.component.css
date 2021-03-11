@@ -1,0 +1,28 @@
+.pointer{
+    cursor: pointer;
+}
+
+.thead-dark th{
+    background-color:orange;
+}
+
+.table-hover:hover{
+    color: orange;
+}
+
+.button{
+    border-radius:20px;
+}
+#refresh{
+    position: relative;
+    left: 62%;
+}
+
+#moveback{
+    position: relative;
+    left: 1%;
+}
+
+#move{
+    padding-top: 15px;
+}

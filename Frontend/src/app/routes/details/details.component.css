@@ -7,3 +7,28 @@ agm-map{
     height: 300px;
     width: 100;
 }
+
+.pointer{
+    cursor: pointer;
+}
+
+.thead-dark th{
+    background-color:orange;
+}
+
+.table-hover:hover{
+    color: orange;
+}
+
+.mr-5{
+    border-radius: 20px;
+}
+
+.ml-3{
+    border-radius: 20px;
+    color:white;
+}
+
+.ml-5{
+    border-radius: 20px;
+}

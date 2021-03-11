@@ -5,6 +5,7 @@ font-size: small;
 
 .mr-5{
     border-radius: 20px;
+
 }
 
 .fa-redo{
@@ -13,4 +14,24 @@ color: grey;
 position: relative;
 left: 97%;
 }
+#refresh{
+    position: relative;
+    left: 85%;
+    border-radius: 20px;
+    background-color: orange;
+    color: white;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.thead-dark th{
+    background-color:orange;
+}
+
+.table-hover:hover{
+    color: orange;
+}
+
 
