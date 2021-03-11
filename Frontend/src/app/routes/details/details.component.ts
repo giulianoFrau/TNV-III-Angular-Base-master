@@ -114,7 +114,7 @@ export class DetailsComponent implements OnInit {
       this.tassoMortalita=this.covid.latest_data.calculated.death_rate;
       this.casiAbitanti=this.covid.latest_data.calculated.cases_per_million_population;
       this.aggiornamento=this.covid.updated_at;
-      if(this.tassoMortalita<5){
+      if(this.tassoMortalita>4){
         this.rischio="rischio alto"
       }else{
         this.rischio="rischio basso"

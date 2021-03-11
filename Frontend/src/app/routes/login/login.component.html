@@ -2,17 +2,22 @@
 
 
 <div class="row p-4 my-2 mx-1 border shadow">
-  <p>Quante volte negli ultimi mesi hai pensato di voler fare le valigie e partire chissà dove perchè la tua
-    la tua natura di esploratore --- Poi però hai accantonato l'idea perché
-    "C'è il Covid..." oppure "Chissà che situazione troverei in quel determinato luogo"... 
-    quindi valigia disfatta e riposta nello sgabuzzino. <br>
-    Capiamo come ti senti e abbiamo pensato di creare uno strumento utile ad un viaggiatore
-    come te. Semplicemente registrandoti ed accedendo al sito " Covid-21 Travel" potrai avere le informazioni di cui
-    hai bisogno per pianificare il tuo viaggio o anche solo per sapere come si sta dall'altra parte del mondo!
-  </p>
+  <i><p > Quante volte negli ultimi mesi hai pensato di voler fare le valigie e partire chissà dove perchè la tua
+     natura di esploratore è rimasta troppo ingabbiata a causa della pandemia? E ancora, quante volte hai visitato dei luoghi
+    o dei punti di interesse specifici senza tenere traccia di ciò che hai visto? Il team degli INDECISI ha pensato a questa tua problematica
+    cercando di creare un'applicazione web che sia in grado di registrare i  luoghi, monumenti e spiagge  che hai visto
+    durante i tuoi viaggi. In tuo supporto abbiamo inoltre integrato un sistema che ti fa vedere la situazione pandemica mondiale o
+    ancora che ti da una valutazione del rischio se hai gia registrato un determinato punto di interesse e vuoi andare a rivisitarlo.
+   <p id="premessa"> Non ti resta che chiudere la valigia, allacciare le cinture e cominciare a navigare nel tuo nuovo diario di bordo !</p></i>
+
   <!--<img src="/assets/img/donnainviaggio.jpg" alt="Siii viaggiare!">-->
-  <button id="enter-btn" class="btn btn-primary border shadow" onclick="document.getElementById('id01').style.display='block'
-    " style="width:auto;">Per iniziare clicca qui!</button>
+ 
+</div>
+
+
+<div>
+<button id="enter-btn" class="btn btn-primary border shadow" onclick="document.getElementById('id01').style.display='block'
+" style="width:auto;">Per iniziare clicca qui!</button>
 </div>
 
 <div id="id01" class="modal">
@@ -21,7 +26,7 @@
       <span onclick="document.getElementById('id01').style.display='none'" class="close"
         title="Close Modal">&times;</span>
     </div>
-
+  
     <div class="container">
       <label for="nomeUtente"><b>Nome</b></label>
       <input type="text" placeholder="Nome" id="nomeUtente" required [(ngModel)]="nomeUtente" name="nomeUtente">
@@ -35,14 +40,14 @@
   </form>
 </div>
 
+
 <ngb-carousel>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
       <img src="assets/img/dolomiti.jpg" alt="Random first slide">
     </div>
     <div class="carousel-caption">
-      <h3>Non ci sono terre straniere. Il viaggiatore è il solo straniero.</h3>
-      <p>(Robert Louis Stevenson)</p>
+     
     </div>
   </ng-template>
   <ng-template ngbSlide>
@@ -50,8 +55,7 @@
       <img src="assets/img/immagineprova.jpg" alt="Random second slide">
     </div>
     <div class="carousel-caption">
-      <h3>Talvolta è meglio perdersi sulla strada di un viaggio impossibile che non partire mai.</h3>
-      <p>(Giorgio Faletti)</p>
+     
     </div>
   </ng-template>
   <ng-template ngbSlide>
@@ -59,9 +63,7 @@
       <img src="assets/img/newyorkcity2.jpg" alt="Random third slide">
     </div>
     <div class="carousel-caption">
-      <h3>Se potessi rivivere la mia vita, nella prossima correrei più rischi, farei più viaggi, guarderei più tramonti.
-      </h3>
-      <p>(Jorge Luis Borges)</p>
     </div>
   </ng-template>
 </ngb-carousel>
+<br>
