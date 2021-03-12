@@ -23,8 +23,8 @@ import { RegistrazioneComponent } from './routes/registrazione/registrazione.com
 import {AgmCoreModule} from '@agm/core';
 import { PaesiService } from './services/paesi.service';
 import { SearchService } from './services/search.service';
-
 import { HeaderloginComponent } from './components/headerlogin/headerlogin.component';
+import { HomepageComponent } from './routes/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { HeaderloginComponent } from './components/headerlogin/headerlogin.compo
     FiltronomevalutazionePipe,
     LoginComponent,
     RegistrazioneComponent,
-    HeaderloginComponent
+    HeaderloginComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

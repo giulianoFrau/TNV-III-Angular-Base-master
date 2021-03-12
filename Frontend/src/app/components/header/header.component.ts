@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private loginService:LoginService, private router:Router) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
   logout() {
-    this.loginService.isLogged=false;
+    this.loginService.isLogged = false;
     this.router.navigate(['/login']);
-    }
+  }
 }

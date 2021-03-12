@@ -1,45 +1,40 @@
 <app-header></app-header>
 
 <div class="container p-5">
-    <div class="row">
-        <button class="btn btn-info mr-5 border shadow " [routerLink]="['/dashboard']">Indietro</button>
+  <div class="row">
+    <button class="btn btn-info mr-5 border shadow " [routerLink]="['/dashboard']">Indietro</button>
+  </div>
+  <form class="pt-5" #form="ngForm">
+    <div class="form-group row">
+      <label for="sort" class="col-sm-2 col-form-label">Ordina per:</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="sort" ngModel required name="sort">
+          <option *ngFor="let sort of sortOptions"> {{sort}} </option>
+        </select>
+      </div>
     </div>
-
-    <form class="pt-5" #form="ngForm">
-        <div class="form-group row">
-            <label for="sort" class="col-sm-2 col-form-label">Ordina per:</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="sort" ngModel required name="sort">
-                    <option *ngFor="let sort of sortOptions"> {{sort}} </option> 
-                </select>
-            </div>
-
-        </div>
-
-    </form>
-
-    <button class="btn btn-success mb-3 border shadow" (click)="sortBy(form)">Ordina</button>
-    
-    <table class="table table table-hover border shadow" >
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Latitudine</th>
-            <th scope="col">Longitudine</th>
-            <th scope="col">Nome POI</th>
-            <th scope="col">Tipo POI</th>
-            <th scope="col">Ingresso</th>
-            <th scope="col">Valutazione</th>       
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="pointer" *ngFor="let entry of orderedItems">
-            <td>{{entry.latitudine}}</td>
-            <td>{{entry.longitudine}}</td>
-            <td>{{entry.nomePoi}}</td>
-            <td>{{entry.tipoPoi}}</td>
-            <td>{{entry.ingresso}}</td>
-            <td>{{entry.valutazione}}</td>
-          </tr>
-        </tbody>
-      </table>
+  </form>
+  <button class="btn btn-success mb-3 border shadow" (click)="sortBy(form)">Ordina</button>
+  <table class="table table table-hover border shadow">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Latitudine</th>
+        <th scope="col">Longitudine</th>
+        <th scope="col">Nome POI</th>
+        <th scope="col">Tipo POI</th>
+        <th scope="col">Ingresso</th>
+        <th scope="col">Valutazione</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of orderedItems">
+        <td>{{entry.latitudine}}</td>
+        <td>{{entry.longitudine}}</td>
+        <td>{{entry.nomePoi}}</td>
+        <td>{{entry.tipoPoi}}</td>
+        <td>{{entry.ingresso}}</td>
+        <td>{{entry.valutazione}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../../services/apiservice.service';
-import { ApiCountry, ApiCountryList, ApiCountryData, LatestData } from '../../models/apicountry.model';
+import { ApiCountryList, ApiCountryData } from '../../models/apicountry.model';
 
 
 @Component({
@@ -22,14 +22,10 @@ export class ApiComponent implements OnInit {
       () => console.log("done loading countries",)
     )
   }
-  
-
-
+/* navbar per cercare una determinata nazione */
   Search() {
-
     this.dataArray = this.dataArray.filter(res => {
       return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
-
     })
   }
 }

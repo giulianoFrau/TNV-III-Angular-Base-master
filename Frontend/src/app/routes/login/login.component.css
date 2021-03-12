@@ -128,17 +128,15 @@ span.psw {
 
 #enter-btn{
 background-color: orange;
-position:relative;
-left:40%;
+position:center;
+
+width:auto; 
+}
+#button{
+  text-align: center;
 }
 
-ngb-carousel{
 
-max-width: 70%;
-left: 15%;
-
-
-}
 
 /*testo apertura*/
 .row{
@@ -146,8 +144,15 @@ left: 15%;
   }
 
   #premessa{
-    position: relative;
-    left:10%;
+   text-align: center;
     font-size: x-large;
-    
   }
+
+
+  #immagine{
+    width: auto;
+    height: 700px;
+  }
+
+
+  

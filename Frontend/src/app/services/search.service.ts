@@ -1,26 +1,20 @@
-import { HttpClient,HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { searchCountry } from '../models/searchcountry.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class SearchService {
 
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) {
-   
+  /* metodo che viene richiamato nella pagina di add per aiutare l'utente per trovare le coordinate 
+  corrette relative alla nazione del suo POI*/
+  getCountries(): Observable<any> {
+    return this.http.get("https://restcountries.eu/rest/v2/all");
   }
+}
 
-  getCountries(): Observable<any>{
-  return this.http.get("https://restcountries.eu/rest/v2/all");
-  
-  }
-  
 
-  
-  }
 
- 
 
- 
 

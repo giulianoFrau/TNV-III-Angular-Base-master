@@ -8,9 +8,6 @@ agm-map{
     width: 100;
 }
 
-.pointer{
-    cursor: pointer;
-}
 
 .thead-dark th{
     background-color:orange;
@@ -22,6 +19,8 @@ agm-map{
 
 .mr-5{
     border-radius: 20px;
+    position: relative;
+    left: 2%;
 }
 
 .ml-3{
@@ -31,4 +30,20 @@ agm-map{
 
 .ml-5{
     border-radius: 20px;
+}
+
+.coloreBackground{
+    background-image: url("/assets/img/prova.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#small{
+    padding:10px 0px 2px 0px ;
+    background-color:black;
+    border-radius:20px;
+    padding-top: 1px; 
+}
+#testo{
+  text-align: center;
 }

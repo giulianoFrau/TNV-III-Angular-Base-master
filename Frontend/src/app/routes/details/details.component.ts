@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { PaesiService } from '../../services/paesi.service';
 import { ApiserviceService } from '../../services/apiservice.service';
-import {  ApiCountryData } from '../../models/apicountry.model';
+import { ApiCountryData } from '../../models/apicountry.model';
 
 @Component({
   selector: 'app-details',
@@ -15,17 +15,6 @@ export class DetailsComponent implements OnInit {
 
   zoom: number;
   mapTypeId: string;
-
-  constructor(
-    private route: ActivatedRoute,
-    private dataService: DataService,
-    private router: Router,
-    private paesiService: PaesiService,
-    private coronaService: ApiserviceService
-  ) {
-    this.zoom = 6;
-    this.mapTypeId = 'hybrid';
-  }
   latitudine: number;
   longitudine: number;
   dataEntry: InterfacciaPoi;
@@ -38,22 +27,31 @@ export class DetailsComponent implements OnInit {
   morti: number;
   covid: ApiCountryData;
   code: any;
-  nazione:string;
-  totAbitanti:number;
-  totCasi:number;
-  tassoMortalita:number;
-  casiAbitanti:number;
-  aggiornamento:Date;
-  rischio:string;
+  nazione: string;
+  totAbitanti: number;
+  totCasi: number;
+  tassoMortalita: number;
+  casiAbitanti: number;
+  aggiornamento: Date;
+  rischio: string;
 
-  ngOnInit(): void {
-
-    this.id = this.route.snapshot.params['id'];
-    this.fetchEntry();
-
+  constructor(
+    private route: ActivatedRoute,
+    private dataService: DataService,
+    private router: Router,
+    private paesiService: PaesiService,
+    private coronaService: ApiserviceService
+  ) {
+    this.zoom = 6;
+    this.mapTypeId = 'hybrid';
   }
 
-  fetchEntry() {
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.fetchEntry();
+  }
+
+  fetchEntry() {  //prende i dati inseriti dall'utente e va a incrociare la lat e la long nella nazione del POI stesso
     this.dataService.getEntry(this.id).subscribe((res: any) => {
       this.dataEntry = res;
       this.latitudine = this.dataEntry.latitudine;
@@ -62,16 +60,15 @@ export class DetailsComponent implements OnInit {
         .getAll()
         .then((paesi) => {
           this.paesi = paesi;
-          this.setNomePaese();
-          this.fetchCovid();
+          this.setNomePaese();  //viene richiamato il metodo per i dettagli del marker
+          this.fetchCovid();  //viene richiamata la seconda chiamata utile per incrociare i dati covid con quelli di quella determinata nazione
         })
         .catch((errore) => console.log(errore));
-
     }
     );
   }
 
-  fetchCovid() {
+  fetchCovid() {  //metodo che permette di ottenere i dati covid di una determinata nazione
     this.coronaService.getDataByPaeseCode(this.code)
       .then((response) => {
         this.covid = response.data;
@@ -93,7 +90,7 @@ export class DetailsComponent implements OnInit {
     );
   }
 
-  setNomePaese() {
+  setNomePaese() {  // fa vedere i dettagli della nazione in cui si trova il  POI (nel marker)
     for (let i = 0; i < this.paesi.length; i++) {
       if ((this.latitudine | 0) === (this.paesi[i].latlng[0] | 0) &&
         (this.longitudine | 0) === (this.paesi[i].latlng[1] | 0)
@@ -107,18 +104,17 @@ export class DetailsComponent implements OnInit {
     }
   }
 
-  setCovid() {
-     this.nazione=this.covid.name;
-      this.morti = this.covid.latest_data.deaths;
-      this.totCasi= this.covid.latest_data.confirmed;
-      this.tassoMortalita=this.covid.latest_data.calculated.death_rate;
-      this.casiAbitanti=this.covid.latest_data.calculated.cases_per_million_population;
-      this.aggiornamento=this.covid.updated_at;
-      if(this.tassoMortalita>4){
-        this.rischio="rischio alto"
-      }else{
-        this.rischio="rischio basso"
-      }
-
+  setCovid() { // fa vedere i dettagli COVID della nazione in cui si trova il  POI
+    this.nazione = this.covid.name;
+    this.morti = this.covid.latest_data.deaths;
+    this.totCasi = this.covid.latest_data.confirmed;
+    this.tassoMortalita = this.covid.latest_data.calculated.death_rate;
+    this.casiAbitanti = this.covid.latest_data.calculated.cases_per_million_population;
+    this.aggiornamento = this.covid.updated_at;
+    if (this.tassoMortalita > 4) {
+      this.rischio = "rischio alto"
+    } else {
+      this.rischio = "rischio basso"
+    }
   }
 }

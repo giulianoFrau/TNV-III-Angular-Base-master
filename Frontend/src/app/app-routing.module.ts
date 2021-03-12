@@ -9,23 +9,23 @@ import { SortByComponent } from './routes/sort-by/sort-by.component';
 import { ApiComponent } from './routes/api/api.component';
 import { LoginComponent } from './routes/login/login.component';
 import { RegistrazioneComponent } from './routes/registrazione/registrazione.component';
+import { HomepageComponent } from './routes/homepage/homepage.component';
 
 
 
 
 const routes: Routes = [
-  { path: "", redirectTo : '/login', pathMatch: 'full' },
-  { path: "dashboard", component : DashboardComponent },
-  { path: "add", component : AddComponent },
-  { path: "details/:id", component : DetailsComponent },
+  { path: "", redirectTo: '/login', pathMatch: 'full' },
+  { path: "dashboard", component: DashboardComponent },
+  { path: "add", component: AddComponent },
+  { path: "details/:id", component: DetailsComponent },
   { path: "edit/:id", component: EditComponent },
-  { path: "filterdouble", component: FilterDoubleComponent},
-  { path: "sortBy", component: SortByComponent},
-  { path: "apicorona", component:ApiComponent},
-  { path: "login", component: LoginComponent},
-  { path: "registrazione", component:RegistrazioneComponent},
-  
-
+  { path: "filterdouble", component: FilterDoubleComponent },
+  { path: "sortBy", component: SortByComponent },
+  { path: "apicorona", component: ApiComponent },
+  { path: "login", component: LoginComponent },
+  { path: "registrazione", component: RegistrazioneComponent },
+  { path: "homepage", component: HomepageComponent },
 ];
 
 @NgModule({

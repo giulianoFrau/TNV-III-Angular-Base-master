@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Utente } from '../../models/utente.model';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UseExistingWebDriver } from 'protractor/built/driverProviders';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -15,17 +13,15 @@ export class RegistrazioneComponent implements OnInit {
   password: string;
   utenteCorrente: Utente;
 
-
   constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
   addUsers() {
-    //this.currentuser.userName = this.userName;
-    //this.currentuser.pwd = this.pwd
+    //this.currentuser.userName = this.userName; //alternativa
+    //this.currentuser.pwd = this.pwd //alternativa
     this.utenteCorrente = { nomeUtente: this.nomeUtente, password: this.password }
     this.loginService.addUser(this.utenteCorrente);
-    console.log(this.utenteCorrente,this.loginService.arrayUtenti);
     this.router.navigate(['/login']);
   }
 }

@@ -11,34 +11,23 @@ import { LoginService } from '../../services/login.service';
 })
 export class DashboardComponent implements OnInit {
 
-  interfacciaPoiLoader=false;
-  constructor( private dataService: DataService, private router : Router,private loginService: LoginService) { }
+  interfacciaPoiLoader = false;
+  public arrayInterfacciaPoi: InterfacciaPoi[];
+
+  constructor(private dataService: DataService, private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.getEntries()
   }
 
-  public arrayInterfacciaPoi: InterfacciaPoi [];
-  countries;
-
-  getEntries(){
-    this.dataService.getData().subscribe( (response : any) => {
+  getEntries() {
+    this.dataService.getData().subscribe((response: any) => {
       this.arrayInterfacciaPoi = response;
-      this.interfacciaPoiLoader=true;
+      this.interfacciaPoiLoader = true;
     })
-    
-    
   }
 
-  goToDetails(id){
+  goToDetails(id) {
     this.router.navigateByUrl('/details/' + id);
   }
-
-  /*Metodo da eliminare perchè abbiamo spostato il tasto Esci nella navbar, quindi in dashboard non esiste piu
-  logout() {
-    this.loginService.isLogged=false;
-    this.router.navigate(['/login']);
-    }
-  */
-
 }

@@ -2,71 +2,57 @@
 
 <div class="container p-5">
     <h3 class="text-center">Registra qui il tuo punto di intenteresse</h3>
-    <div class="form-group row" >
-
+    <div class="form-group row">
         <label for="ricerca" class="col-sm-2 col-form-label">Ricerca</label>
-    <div class="input-group rounded col-sm-10">
-       
-        <input type="search" class="form-control " name="country" [(ngModel)]="name" (ngModelChange)="Search()" placeholder="Ricerca le tue coordinte" aria-label="Search"
-          aria-describedby="search-addon" />
-        <span class="input-group-text border-0" id="search-addon">
-          <i class="fas fa-search"></i>
-        </span>
-      </div>
+        <div class="input-group rounded col-sm-10">
+            <input type="search" class="form-control " name="country" [(ngModel)]="name" (ngModelChange)="Search()"
+                placeholder="Ricerca le tue coordinte" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
     </div>
-    <button id="refresh"  class="btn btn-warning mr-5"onClick="history.go(0);">Ricarica la tabella</button>
+    <button id="refresh" class="btn btn-warning mr-5" onClick="history.go(0);">Ricarica la tabella</button>
     <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
- 
         <table class="table table table-hover border shadow" *ngIf="showResult">
             <thead class="thead-dark">
-              <tr>
-                <th scope="col">Country</th>
-                <th scope="col">Code</th>
-                <th scope="col">Latitudine</th>
-                <th scope="col">Longitudine</th>
-              </tr>
+                <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Latitudine</th>
+                    <th scope="col">Longitudine</th>
+                </tr>
             </thead>
             <tbody>
-              <tr class="pointer" *ngFor="let entry of searchCountry">
-                <th scope="row"> {{entry.name}}</th>
-                <th scope="row"> {{entry.alpha2Code}}</th>
-                <td>{{entry.latlng[0]}}</td>
-                <td>{{entry.latlng[1]}}</td>
-                
-              </tr>
+                <tr class="pointer" *ngFor="let entry of searchCountry">
+                    <th scope="row"> {{entry.name}}</th>
+                    <th scope="row"> {{entry.alpha2Code}}</th>
+                    <td>{{entry.latlng[0]}}</td>
+                    <td>{{entry.latlng[1]}}</td>
+                </tr>
             </tbody>
-          </table>
-   
-    <br><br>
-
-    
-   
+        </table>
+        <br>
         <div class="form-group row">
             <label for="latitudine" class="col-sm-2 col-form-label">Latitudine</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="latitudine" required ngModel name="latitudine" max="90" min="-90">
-             
-
-            </div>           
+                <input type="number" class="form-control" id="latitudine" required ngModel name="latitudine" max="90"
+                    min="-90">
+            </div>
         </div>
-
         <div class="form-group row">
             <label for="longitudine" class="col-sm-2 col-form-label">Longitudine</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="longitudine"  required number ngModel name="longitudine"  max="180" min="-180">
-              
+                <input type="number" class="form-control" id="longitudine" required number ngModel name="longitudine"
+                    max="180" min="-180">
             </div>
         </div>
-
-
         <div class="form-group row">
             <label for="nomePoi" class="col-sm-2 col-form-label">Nome POI</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nomePoi" required number   ngModel name="nomePoi">
+                <input type="text" class="form-control" id="nomePoi" required number ngModel name="nomePoi">
             </div>
         </div>
-
-        
         <div class="form-group row">
             <label for="tipoPoi" class="col-sm-2 col-form-label">Tipo POI</label>
             <div class="col-sm-10">
@@ -74,9 +60,7 @@
                     <option *ngFor="let tipo of tipoPoi"> {{tipo}} </option>
                 </select>
             </div>
-
         </div>
-
         <div class="form-group row">
             <label for="ingresso" class="col-sm-2 col-form-label">Ingresso</label>
             <div class="col-sm-10">
@@ -85,7 +69,6 @@
                 </select>
             </div>
         </div>
-
         <div class="form-group row">
             <label for="valutazione" class="col-sm-2 col-form-label">Valutazione</label>
             <div class="col-sm-10">
@@ -95,10 +78,9 @@
             </div>
         </div>
         <div class="row">
-        <button type="submit" [disabled]="!form.valid" class="btn btn-success mr-5">Invio</button>
-        <button  class="btn btn-danger mr-5"onClick="history.go(0);" >Reset</button> 
-        <button class="btn btn-info mr-5" [routerLink]="['/dashboard']">Torna alla Home</button>       
+            <button type="submit" [disabled]="!form.valid" class="btn btn-success mr-5">Invio</button>
+            <button class="btn btn-danger mr-5" onClick="history.go(0);">Reset</button>
+            <button class="btn btn-info mr-5" [routerLink]="['/dashboard']">Torna alla Home</button>
         </div>
-
     </form>
 </div>

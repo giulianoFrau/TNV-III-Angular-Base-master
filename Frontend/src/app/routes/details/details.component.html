@@ -1,15 +1,13 @@
 <app-header></app-header>
 
-<div *ngIf="dataEntry != null" class="container" >
-  <agm-map 
-    [latitude]="latitudine"
-    [longitude]="longitudine"
-    [zoom]="zoom"
-    [mapTypeId]="mapTypeId"
-  >
-    <agm-marker [latitude]="latitudine" [longitude]="longitudine" >
-      <agm-info-window >
-  
+<br>
+<div *ngIf="dataEntry != null" class="container">
+  <i>
+    <h3 id="testo">Il tuo POI si trova in : {{ nomePaese }}</h3>
+  </i>
+  <agm-map [latitude]="latitudine" [longitude]="longitudine" [zoom]="zoom" [mapTypeId]="mapTypeId">
+    <agm-marker [latitude]="latitudine" [longitude]="longitudine">
+      <agm-info-window>
         <h3>Nation Name: {{ nomePaese }}</h3>
         <p>Capital :{{ capitale }}</p>
         <p>Region :{{ regione }}</p>
@@ -18,58 +16,57 @@
       </agm-info-window>
     </agm-marker>
   </agm-map>
-
-  <div class="row p-4 my-2 mx-1 border shadow" >
-    <button class="btn btn-info mr-5" [routerLink]="['/dashboard']">
-      Back
-    </button>
-  
-    <h3>benvenuto in : {{ nomePaese }}</h3>
-  </div>
-
   <div class="mt-5 p-4">
+    <i>
+      <h3>Dettagli del Punto di interesse inserito :</h3>
+    </i>
+    <div id="small">
+    </div>
+    <br>
     <ul class="list-group">
-      <li class="list-group-item">Id : {{ dataEntry.id }}</li>
-      <li class="list-group-item">Latitudine : {{ dataEntry.latitudine }}</li>
-      <li class="list-group-item">Longitudine {{ dataEntry.longitudine }}</li>
-      <li class="list-group-item">Nome POI : {{ dataEntry.nomePoi }}</li>
-      <li class="list-group-item">Tipo POI : {{ dataEntry.tipoPoi }}</li>
-      <li class="list-group-item">Ingresso : {{ dataEntry.ingresso }}</li>
-      <li class="list-group-item">Valutazione : {{ dataEntry.valutazione }}</li>
+      <li class="list-group-item">Id: {{ dataEntry.id }}</li>
+      <li class="list-group-item">Latitudine: {{ dataEntry.latitudine }}</li>
+      <li class="list-group-item">Longitudine: {{ dataEntry.longitudine }}</li>
+      <li class="list-group-item">Nome POI: {{ dataEntry.nomePoi }}</li>
+      <li class="list-group-item">Tipo POI: {{ dataEntry.tipoPoi }}</li>
+      <li class="list-group-item">Ingresso: {{ dataEntry.ingresso }}</li>
+      <li class="list-group-item">Valutazione: {{ dataEntry.valutazione }}</li>
     </ul>
   </div>
-
   <div class="row">
     <button class="btn btn-danger ml-5" (click)="delete()">Cancella</button>
-    <button
-      class="btn btn-info ml-3"[routerLink]="['/edit/' + dataEntry.id]">Modifica</button>
+    <button class="btn btn-success ml-3" [routerLink]="['/edit/' + dataEntry.id]">Modifica</button>
   </div>
- <br>
- 
-
- <table class="table table table-hover border shadow ">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Nazione</th>
-      <th scope="col">Totale Morti</th>
-      <th scope="col">Casi totali confermati</th>
-      <th scope="col">Tasso di mortalità</th>
-      <th scope="col">Casi per milioni di abitanti</th>
-      <th scope="col">Ultimo aggiornamento</th>
-      <th scope="col">grado di rischio</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="pointer" >
-      <th scope="row"> {{nazione}}</th>
-      <td>{{morti}}</td>
-      <td>{{totCasi}}</td>
-      <td>{{tassoMortalita}} %</td>
-      <td>{{casiAbitanti}} </td>
-      <td>{{aggiornamento }} </td>
-      <td>{{rischio}} </td>
-    </tr>
-
-</table>
+  <br>
+  <i>
+    <h3>Situazione attuale covid : {{nomePaese}}</h3>
+  </i>
+  <div id="small">
+  </div>
+  <br>
+  <table class="table table table-hover border shadow ">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nazione</th>
+        <th scope="col">Totale Morti</th>
+        <th scope="col">Casi totali confermati</th>
+        <th scope="col">Tasso di mortalità</th>
+        <th scope="col">Casi per milioni di abitanti</th>
+        <th scope="col">Ultimo aggiornamento</th>
+        <th scope="col">grado di rischio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer">
+        <th scope="row"> {{nazione}}</th>
+        <td>{{morti}}</td>
+        <td>{{totCasi}}</td>
+        <td>{{tassoMortalita}} %</td>
+        <td>{{casiAbitanti}} </td>
+        <td>{{aggiornamento }} </td>
+        <td>{{rischio}} </td>
+      </tr>
+  </table>
+  <button class="btn btn-info mr-5 border shadow" [routerLink]="['/dashboard']">Indietro </button>
 </div>
+<br>

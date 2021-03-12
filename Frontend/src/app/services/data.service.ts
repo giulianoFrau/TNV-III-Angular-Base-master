@@ -10,13 +10,13 @@ export class DataService {
 
   baseURL = 'http://localhost:3000/data';
 
-  constructor( private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getData () {
+  getData() {
     return this.http.get<Array<InterfacciaPoi>>(this.baseURL)
   }
 
-  getEntry( id ) {
+  getEntry(id) {
     return this.http.get<InterfacciaPoi>(this.baseURL + "/" + id)
   }
 
@@ -31,7 +31,7 @@ export class DataService {
     });
   };
 
-  deleteEntry( id ){
+  deleteEntry(id) {
     return this.http.delete(this.baseURL + "/" + id)
   }
 
@@ -42,5 +42,4 @@ export class DataService {
       "valutazione": data.valutazione,
     });
   };
-
 }
