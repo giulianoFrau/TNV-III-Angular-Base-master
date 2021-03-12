@@ -1,12 +1,29 @@
 <app-header></app-header>
 <br>
-<marquee scrollamount="10" scrolldelay="30">
-<i><h1>Benvenuto</h1></i>
+<marquee scrollamount="20" scrolldelay="30">
+  <i>
+    <h1>Benvenuto nel sito degli "Indecisi"!</h1>
+  </i>
 </marquee>
+<br>
 <ngb-carousel>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
+      <img src="assets/img/louvre.jpg" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
       <img src="assets/img/dolomiti.jpg" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="assets/img/colosseo.jpg" alt="Random first slide">
     </div>
     <div class="carousel-caption">
     </div>
@@ -20,7 +37,7 @@
   </ng-template>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img src="assets/img/newyorkcity2.jpg" alt="Random third slide">
+      <img src="assets/img/rio.jpg" alt="Random third slide">
     </div>
     <div class="carousel-caption">
     </div>
@@ -39,19 +56,27 @@
     <div class="col-lg-4 border shadow ">
       <svg class="bd-placeholder-img rounded-circle dashboard " width="140" height="140"></svg>
       <h2>Elenco Punti d'interesse inseriti</h2>
-      <i><p>Se vuoi accedere ai tuoi punti di interesse clicca qui sotto</p></i>
-      <p><button class="btn btn-info" [routerLink]="['/dashboard']">Accedi all'elenco di POI memorizzati &raquo;</button></p>
+      <i>
+        <p>Se vuoi accedere ai tuoi punti di interesse clicca qui sotto</p>
+      </i>
+      <p><button class="btn btn-info" [routerLink]="['/dashboard']">Accedi all'elenco di POI memorizzati
+          &raquo;</button></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4 border shadow ">
       <svg class="bd-placeholder-img rounded-circle add " width="140" height="140"></svg>
       <h2>Aggiungi un Punto d'interesse </h2>
-      <i>  <p>Se vuoi registrare un nuovo punto di interesse clicca qui sotto</p></i>
-      <p><button class="btn btn-info"[routerLink]="['/add']">Inserisci un nuovo POI &raquo;</button></p>
+      <i>
+        <p>Se vuoi registrare un nuovo punto di interesse clicca qui sotto</p>
+      </i>
+      <p><button class="btn btn-info" [routerLink]="['/add']">Inserisci un nuovo POI &raquo;</button></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4 border shadow ">
       <svg class="bd-placeholder-img rounded-circle covid " width="140" height="140"></svg>
       <h2>Situazione pandemica mondiale</h2>
-      <i> <p>Se vuoi visualizzare i dati covid mondiali <br> clicca qui sotto </p></i>
-      <p><button class="btn btn-info" [routerLink]="['/apicorona']">Visualizza la situazione mondiale &raquo;</button></p>
+      <i>
+        <p>Se vuoi visualizzare i dati covid mondiali <br> clicca qui sotto </p>
+      </i>
+      <p><button class="btn btn-info" [routerLink]="['/apicorona']">Visualizza la situazione mondiale &raquo;</button>
+      </p>
     </div><!-- /.col-lg-4 -->
   </div><!-- /.row -->
