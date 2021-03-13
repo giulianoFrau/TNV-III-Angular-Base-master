@@ -3,11 +3,12 @@
 <form (ngSubmit)="addUsers()" #form="ngForm">
   <div class="imgcontainer">
   </div>
-  <div class="container">
+  <div class="container border shadow immagine">
     <label for="nomeUtente"><b>Nome</b></label>
     <input type="text" placeholder="Nome" id="name" required [(ngModel)]="nomeUtente" name="nomeUtente">
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Password" id="password" required [(ngModel)]="password" name="password">
-    <button type="submit" [disabled]="!form.valid">Registrati!</button>
+    <button id="enter-btn" type="submit" [disabled]="!form.valid">Registrati!</button>
   </div>
 </form>
+<br>

@@ -69,3 +69,11 @@
       width: 100%;
     }
   }
+  .immagine{
+    background-image: url('/assets/img/travelcut.jpg');
+  }
+    
+#enter-btn{
+  background-color: orange;
+  width:auto; 
+  }
