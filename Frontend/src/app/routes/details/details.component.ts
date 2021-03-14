@@ -34,6 +34,8 @@ export class DetailsComponent implements OnInit {
   casiAbitanti: number;
   aggiornamento: Date;
   rischio: string;
+  gradoRischio=3;
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -111,7 +113,7 @@ export class DetailsComponent implements OnInit {
     this.tassoMortalita = this.covid.latest_data.calculated.death_rate;
     this.casiAbitanti = this.covid.latest_data.calculated.cases_per_million_population;
     this.aggiornamento = this.covid.updated_at;
-    if (this.tassoMortalita > 4) {
+    if (this.tassoMortalita > this.gradoRischio) {
       this.rischio = "rischio alto"
     } else {
       this.rischio = "rischio basso"
