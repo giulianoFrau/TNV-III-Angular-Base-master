@@ -1,5 +1,5 @@
 export interface searchCountry {
     name: string;
-    latlng: [];
+    latlng:any;
     alpha2Code: string;
 }

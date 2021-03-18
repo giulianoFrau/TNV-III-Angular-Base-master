@@ -38,6 +38,7 @@ export class AddComponent implements OnInit {
       .subscribe(
         data => {
           this.searchCountry = data;
+          
         }
       )
   }
@@ -52,9 +53,18 @@ export class AddComponent implements OnInit {
     }
   }
 
+  copiaLat() {
+    
+    for(let i=0;i<this.searchCountry.length;i++){
+      this.latitudine=this.searchCountry[i].latlng[0]
+      this.longitudine=this.searchCountry[i].latlng[1]
+    }
+  }
+
   onSubmit(form: NgForm) {
     this.dataEntry = form.form.value;
     console.log(this.dataEntry);
+    
 
     this.dataService.addEntry(this.dataEntry).subscribe(response => {
       console.log(response);
