@@ -27,6 +27,7 @@ export class AddComponent implements OnInit {
   tipoPoi = ["Spiaggia", "Monumento", "Museo", "Stadio", "Belvedere", "Altro"];
   ingresso = ["Libero", "A pagamento", " Offerta"];
   valutazione = ["Mai piu", "Passabile", "Discreto", "Bello", "Indimenticabile"];
+  indiceLista:number;
 
   constructor(private dataService: DataService, private router: Router,
     private SearchService: SearchService) { }
@@ -53,12 +54,9 @@ export class AddComponent implements OnInit {
     }
   }
 
-  copiaLat() {
-    
-    for(let i=0;i<this.searchCountry.length;i++){
-      this.latitudine=this.searchCountry[i].latlng[0]
-      this.longitudine=this.searchCountry[i].latlng[1]
-    }
+  copiaLat(indiceLista) {
+      this.latitudine=this.searchCountry[indiceLista].latlng[0];
+      this.longitudine=this.searchCountry[indiceLista].latlng[1];
   }
 
   onSubmit(form: NgForm) {

@@ -13,7 +13,7 @@
         </div>
     </div>
     <button id="refresh" class="btn btn-warning mr-5" onClick="history.go(0);">Ricarica la tabella</button>
-    <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm"  (click)="copiaLat()">
+    <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm"  >
         <table class="table table table-hover border shadow" *ngIf="showResult">
             <thead class="thead-dark">
                 <tr>
@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="pointer" *ngFor="let entry of searchCountry" >
+                <tr class="pointer" *ngFor="let entry of searchCountry ; index as i"  (click)="copiaLat(i)" >
                     <th scope="row"> {{entry.name}}</th>
                     <th scope="row"> {{entry.alpha2Code}}</th>
                     <td>{{entry.latlng[0]}}</td>
