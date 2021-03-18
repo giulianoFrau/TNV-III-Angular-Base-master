@@ -22,11 +22,15 @@ export class ApiComponent implements OnInit {
       () => console.log("done loading countries",)
     )
   }
-/* navbar per cercare una determinata nazione */
+  /* navbar per cercare una determinata nazione */
   Search() {
-    this.dataArray = this.dataArray.filter(res => {
-      return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
-    })
+    if (this.name == "") {
+      this.ngOnInit();
+    } else {
+      this.dataArray = this.dataArray.filter(res => {
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      })
+    }
   }
 }
 
