@@ -127,11 +127,12 @@ span.psw {
 }
 
 #enter-btn{
-color: white;
-font-size: x-large ;
-position:center;
-width:500px;
-height: 100px;
+  color: white;
+  font-size: x-large ;
+  position:center;
+  width:500px;
+  height: 100px;
+  margin: 100px 0px 150px 0;
 }
 
 #enter-btn:hover{
