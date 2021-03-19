@@ -34,8 +34,8 @@
     </ul>
   </div>
   <div class="row">
-    <button class="btn btn-danger ml-5" (click)="delete()">Cancella</button>
-    <button class="btn btn-success ml-3" [routerLink]="['/edit/' + dataEntry.id]">Modifica</button>
+    <button class="btn btn-outline-danger ml-5 left" (click)="delete()">Cancella</button>
+    <button class="btn btn-outline-success ml-3 left" [routerLink]="['/edit/' + dataEntry.id]">Modifica</button>
   </div>
   <br>
   <i>
@@ -61,12 +61,12 @@
         <th scope="row"> {{nazione}}</th>
         <td>{{morti}}</td>
         <td>{{totCasi}}</td>
-        <td>{{tassoMortalita}} %</td>
+        <td>{{tassoMortalita | number: '1.1-2'}} %</td>
         <td>{{casiAbitanti}} </td>
-        <td>{{aggiornamento }} </td>
+        <td>{{aggiornamento | date: 'd/M/yy , h:mm a' }} </td>
         <td>{{rischio}} </td>
       </tr>
   </table>
-  <button class="btn btn-info mr-5 border shadow" [routerLink]="['/dashboard']">Indietro </button>
+  <button class="btn btn-outline-info mr-5" [routerLink]="['/dashboard']">Indietro </button>
 </div>
 <br>

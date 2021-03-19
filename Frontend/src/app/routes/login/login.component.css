@@ -19,13 +19,13 @@ button {
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
-  border-radius: 20px;
+  
   cursor: pointer;
   width: 100%;
 }
 
-button:hover {
-  opacity: 0.6;
+#registrati:hover {
+  background: orange;
 }
 
 #registrati{
@@ -127,11 +127,18 @@ span.psw {
 }
 
 #enter-btn{
-background-color: orange;
+color: white;
+font-size: x-large ;
 position:center;
-
-width:auto; 
+width:500px;
+height: 100px;
 }
+
+#enter-btn:hover{
+  background: orange;
+  
+}
+
 #button{
   text-align: center;
 }
@@ -154,5 +161,17 @@ width:auto;
     height: 700px;
   }
 
+/*soluzione ombra 1 
+  #ombra{
+    width: 90%;
+    left: 5%;
+    position: relative;
+  }*/
 
-  
+  /*soluzione ombra 2 (eliminare classe border shadow)
+ #ombra{
+   box-shadow: 10px  10px 5px #dedede,
+   -10px -10px 5px #dedede,
+    10px -10px 5px #dedede,
+   -10px  10px 5px #dedede;;
+ }*/

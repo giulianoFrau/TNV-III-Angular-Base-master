@@ -3,18 +3,19 @@
 }
 
 .table-hover:hover{
-    color: orange;
+    color: #cecece;
 }
 
 table{
     border: 1px solid black;
 }
 
-button{
-    border-radius: 20px;
-}
-
 .mr-5{
     position: relative;
-    left:1%;
+    left: 91%;
 } 
+
+.mb-3{
+    position: relative;
+    left:94%;
+}

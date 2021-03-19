@@ -1,5 +1,6 @@
 <app-headerlogin> </app-headerlogin>
-<div class="row p-4 my-2 mx-1 border shadow">
+
+<div id="ombra" class="row p-4 my-2 mx-1 border shadow ">
   <i>
     <p> Quante volte negli ultimi mesi hai pensato di voler fare le valigie e partire chissà dove perchè la tua
       natura di esploratore è rimasta troppo ingabbiata a causa della pandemia? E ancora, quante volte hai visitato dei
@@ -16,7 +17,7 @@
   </i>
 </div>
 <div id="button">
-  <button id="enter-btn" class="btn btn-primary border shadow" onclick="document.getElementById('id01').style.display='block'
+  <button id="enter-btn" class="btn btn-warning border shadow" type="button" onclick="document.getElementById('id01').style.display='block'
 ">Per iniziare clicca qui!</button>
 </div>
 <div id="id01" class="modal">
@@ -33,7 +34,7 @@
       <button class="btn btn-primary border shadow" type="submit" [disabled]="!loginForm.valid">Accedi!</button>
       <h6>Oppure</h6>
       <button class="btn btn-warning border shadow" id="registrati" type="submit"
-        [routerLink]='["/registrazione"]'>Nuovo account?Registrati!</button>
+        [routerLink]='["/registrazione"]'>Nuovo account? Registrati!</button>
     </div>
   </form>
 </div>

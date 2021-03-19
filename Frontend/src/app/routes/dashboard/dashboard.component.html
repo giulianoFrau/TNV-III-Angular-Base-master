@@ -1,14 +1,8 @@
 <app-header></app-header>
 
 <div class="container p-5">
-  <div class="text-right">
-    <button class="btn btn-info mb-3 add border shadow" [routerLink]='["/add"]'>Aggiungi una destinazione</button>
-    <button class="btn btn-info mb-3 filter border shadow" [routerLink]='["/filterdouble"]'>Filtra i tuoi
-      POI</button>
-    <button class="btn btn-info mb-3 sort border shadow" [routerLink]='["/sortBy"]'>Ordina i tuoi POI</button>
-    <button class="btn btn-info mb-3 api border shadow" [routerLink]='["/apicorona"]'>Situazione Pandemica
-      Globale</button>
-  </div>
+  <i><h3>Elenco dei tuoi POI</h3></i>
+  <br>
   <table class="table table table-hover border shadow">
     <thead class="thead-dark">
       <tr>
@@ -35,4 +29,12 @@
       </tr>
     </tbody>
   </table>
+  <div class="text-right">
+    <button class="btn btn-outline-info mb-3 add" [routerLink]='["/add"]'>Aggiungi una destinazione</button>
+    <button class="btn btn-outline-info mb-3 filter" [routerLink]='["/filterdouble"]'>Filtra i tuoi
+      POI</button>
+    <button class="btn btn-outline-info mb-3 sort " [routerLink]='["/sortBy"]'>Ordina i tuoi POI</button>
+    <button class="btn btn-outline-info mb-3 api " [routerLink]='["/apicorona"]'>Situazione Pandemica
+      Globale</button>
+  </div>
 </div>

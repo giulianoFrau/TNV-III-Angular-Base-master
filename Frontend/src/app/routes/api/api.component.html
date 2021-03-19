@@ -10,7 +10,7 @@
       placeholder="Inserisci la nazione">
   </nav>
   <div id="move">
-    <button id="moveback" class="btn btn-info  mb-3 button" [routerLink]='["/dashboard"]'>Torna indietro alla
+    <button id="moveback" class="btn btn-outline-info mb-3 button" [routerLink]='["/dashboard"]'>Torna indietro alla
       dashboard </button>
   </div>
   <table class="table table table-hover border shadow">
@@ -31,9 +31,9 @@
         <td>{{entry.population}}</td>
         <td>{{entry.latest_data.deaths}}</td>
         <td>{{entry.latest_data.confirmed}}</td>
-        <td>{{entry.latest_data.calculated.death_rate}} %</td>
+        <td>{{entry.latest_data.calculated.death_rate | number : '1.1-2'}} %</td>
         <td>{{entry.latest_data.calculated.cases_per_million_population}} </td>
-        <td>{{entry.updated_at}}</td>
+        <td>{{entry.updated_at | date: 'd/M/yy , h:mm a'}}</td>
       </tr>
     </tbody>
   </table>

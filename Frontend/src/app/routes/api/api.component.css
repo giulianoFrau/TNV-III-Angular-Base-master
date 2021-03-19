@@ -4,12 +4,10 @@
 }
 
 .table-hover:hover{
-    color: orange;
+    color: #cecece;
 }
 
-.button{
-    border-radius:20px;
-}
+
 #refresh{
     position: relative;
     left: 62%;
@@ -17,7 +15,7 @@
 
 #moveback{
     position: relative;
-    left: 1%;
+    left: 78%;
 }
 
 #move{

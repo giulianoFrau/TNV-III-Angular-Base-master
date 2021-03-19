@@ -3,10 +3,10 @@
 <div class="container p-5">
     <h3 class="text-center">Registra qui il tuo punto di intenteresse</h3>
     <div class="form-group row">
-        <label for="ricerca" class="col-sm-2 col-form-label">Ricerca</label>
+        <label for="ricerca" class="col-sm-2 col-form-label">Ricerca Nazione</label>
         <div class="input-group rounded col-sm-10">
             <input type="search" class="form-control " name="country" [(ngModel)]="name" (ngModelChange)="Search()"
-                placeholder="Ricerca la tua Nazione e copia le coordinate nei campi sottostanti" aria-label="Search" aria-describedby="search-addon" />
+                placeholder="Ricerca e seleziona la tua Nazione " aria-label="Search" aria-describedby="search-addon" />
             <span class="input-group-text border-0" id="search-addon">
                 <i class="fas fa-search"></i>
             </span>
@@ -78,8 +78,8 @@
             </div>
         </div>
         <div class="row">
-            <button type="submit" [disabled]="!form.valid" class="btn btn-success mr-5">Invio</button>
-            <button class="btn btn-info mr-5" [routerLink]="['/dashboard']">Torna alla dashboard</button>
+            <button  type="submit" [disabled]="!form.valid" class="btn btn-outline-success mr-5 left">Aggiungi</button>
+            <button class="btn btn-outline-info mr-5 left" [routerLink]="['/dashboard']">Torna alla dashboard</button>
         </div>
     </form>
 </div>

@@ -7,7 +7,7 @@
 }
 
 .table-hover:hover{
-    color: orange;
+    color:#cecece;
 }
 
 table{
@@ -21,9 +21,7 @@ h1{
     font-weight: 600;
 }
 
-button{
-    border-radius: 20px;
-}
+
 .fa-info-circle{
     display: inline-block;
     width: 100%;
@@ -46,4 +44,9 @@ button{
 .sort{
     position:relative;
     right: 9%;
+}
+
+h3{
+    
+    text-align: center;
 }

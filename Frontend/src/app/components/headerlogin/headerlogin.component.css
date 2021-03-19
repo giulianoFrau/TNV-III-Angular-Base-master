@@ -14,19 +14,21 @@
   }
   
   .covid-text{
+    color:white;
     font-size: 4.4rem;
     margin-top: 96px;
     margin-bottom: 0;
   }
   
   ._21-text{
-    color:rgba(0, 0, 255, 0.89);
+    color:#17a2b8;
+    font-family: italic;
     font-weight: 600;
     font-size: 5rem;
   }
   
   .logo-divider{
-    border-bottom: 4px solid rgba(0, 0, 255, 0.89);
+    border-bottom: 4px solid #17a2b8;
     width: 20rem;
     margin: 0;
   }
