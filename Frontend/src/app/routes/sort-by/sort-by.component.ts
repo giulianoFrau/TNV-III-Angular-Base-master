@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 export class SortByComponent implements OnInit {
 
   arrayInterfacciaPoi: InterfacciaPoi[];
-  sortOptions = ["Nome POI", "latitudine"];
+  sortOptions = ["Nome POI", "Latitudine"];
   sortOption: string;
   orderedItems: InterfacciaPoi[];
 

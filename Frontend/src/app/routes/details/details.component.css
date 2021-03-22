@@ -8,22 +8,10 @@ agm-map{
     width: 100;
 }
 
-
-.thead-dark th{
-    background-color:orange;
-}
-
-.table-hover:hover{
-    color:#cecece;
-}
-
 .mr-5{
     position: relative;
     left: 92%;
 }
-
-
-
 
 .coloreBackground{
     background-image: url("/assets/img/prova.jpg");
@@ -42,6 +30,36 @@ agm-map{
 }
 
 .left{
-position: relative;
-left: 76%;
+    position: relative;
+    left: 76%;
 }
+
+.thead{
+    background-color:orange;
+    color: white;
+}
+
+#cornertl{
+    border-top-left-radius: 5px;
+    border-top: none;
+}
+
+#cornertr{
+    border-top-right-radius: 5px;
+    border-top: none;
+}
+
+th{
+    border-top: none;
+}
+
+.linea{
+    border-top: 1px  solid #dee2e6;
+}
+
+tbody{
+    border: 1px solid lightgray;
+}
+
+
+

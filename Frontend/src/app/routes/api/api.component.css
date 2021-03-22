@@ -1,18 +1,4 @@
 
-.thead-dark th{
-    background-color:orange;
-}
-
-.table-hover:hover{
-    color: #cecece;
-}
-
-
-#refresh{
-    position: relative;
-    left: 62%;
-}
-
 #moveback{
     position: relative;
     left: 78%;
@@ -20,4 +6,35 @@
 
 #move{
     padding-top: 15px;
+}
+
+.thead{
+    background-color:orange;
+    color: white;
+}
+
+#cornertl{
+    border-top-left-radius: 5px;
+    border-top: none;
+}
+
+#cornertr{
+    border-top-right-radius: 5px;
+    border-top: none;
+}
+
+.table-hover:hover{
+    color: #dfdfdf;
+}
+
+th{
+    border-top: none;
+}
+
+tbody{
+    border: 1px solid lightgray;
+}
+
+.linea{
+    border-top: 1px  solid #dee2e6;
 }

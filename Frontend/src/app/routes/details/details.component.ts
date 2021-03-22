@@ -114,9 +114,9 @@ export class DetailsComponent implements OnInit {
     this.casiAbitanti = this.covid.latest_data.calculated.cases_per_million_population;
     this.aggiornamento = this.covid.updated_at;
     if (this.tassoMortalita > this.gradoRischio) {
-      this.rischio = "rischio alto"
+      this.rischio = "Rischio alto"
     } else {
-      this.rischio = "rischio basso"
+      this.rischio = "Rischio basso"
     }
   }
 }

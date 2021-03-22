@@ -1,15 +1,3 @@
-.thead-dark th{
-    background-color:orange;
-}
-
-.table-hover:hover{
-    color: #cecece;
-}
-
-table{
-    border: 1px solid black;
-}
-
 .mr-5{
     left: 91%;
     position: relative;
@@ -18,4 +6,35 @@ table{
 .mb-3{
     left: 93%;
     position: relative;
+}
+
+.thead{
+    background-color:orange;
+    color: white;
+}
+
+#cornertl{
+    border-top-left-radius: 5px;
+    border-top: none;
+}
+
+#cornertr{
+    border-top-right-radius: 5px;
+    border-top: none;
+}
+
+.table-hover:hover{
+    color: #dfdfdf;
+}
+
+th{
+    border-top: none;
+}
+
+#linea{
+    border-top: 1px  solid #dee2e6;
+}
+
+tbody{
+    border: 1px solid lightgray;
 }

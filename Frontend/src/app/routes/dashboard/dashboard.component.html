@@ -12,22 +12,22 @@
     <button class="btn btn-outline-info mb-3 api " [routerLink]='["/apicorona"]'>Situazione Pandemica
       Globale</button>
   </div>
-  <table class="table table table-hover border shadow">
-    <thead class="thead-dark">
+  <table class="table table table-hover ">
+    <thead class="thead">
       <tr>
-        <th scope="col">#</th>
+        <th id="cornertl" scope="col">#</th>
         <th scope="col">Latitudine</th>
         <th scope="col">Longitudine</th>
         <th scope="col">Nome POI</th>
         <th scope="col">Tipo POI</th>
         <th scope="col">Ingresso</th>
         <th scope="col">Valutazione</th>
-        <th scope="col">Info</th>
+        <th id="cornertr" scope="col">Info</th>
       </tr>
     </thead>
     <tbody>
       <tr class="pointer" *ngFor="let entry of arrayInterfacciaPoi ; let i = index" (click)="goToDetails(entry.id)">
-        <th scope="row"> {{i + 1}}</th>
+        <th id="linea" scope="row"> {{i + 1}}</th>
         <td>{{entry.latitudine}}</td>
         <td>{{entry.longitudine}}</td>
         <td>{{entry.nomePoi}}</td>

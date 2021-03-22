@@ -2,25 +2,42 @@
     cursor: pointer;
 }
 
-.thead-dark th{
+.thead{
     background-color:orange;
+    color: white;
+}
+
+#cornertl{
+    border-top-left-radius: 5px;
+    border-top: none;
+}
+
+#cornertr{
+    border-top-right-radius: 5px;
+    border-top: none;
 }
 
 .table-hover:hover{
-    color:#cecece;
+    color: #dfdfdf;
 }
 
-table{
-    border: 1px solid black;
+th{
+    border-top: none;
 }
 
+#linea{
+    border-top: 1px  solid #dee2e6;
+}
+
+tbody{
+    border: 1px solid lightgray;
+}
 
 h1{
     font-style: italic;
     font-size: 4rem;
     font-weight: 600;
 }
-
 
 .fa-info-circle{
     display: inline-block;
@@ -46,7 +63,7 @@ h1{
     right: 9%;
 }
 
-h3{
-    
+h3{   
     text-align: center;
 }
+

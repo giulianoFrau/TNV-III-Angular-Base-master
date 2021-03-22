@@ -13,19 +13,19 @@
         </div>
     </div>
     <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm"  >
-        <table class="table table table-hover border shadow" *ngIf="showResult">
-            <thead class="thead-dark">
+        <table class="table table table-hover" *ngIf="showResult">
+            <thead class="thead">
                 <tr>
-                    <th scope="col">Country</th>
+                    <th id="cornertl" scope="col">Country</th>
                     <th scope="col">Code</th>
                     <th scope="col">Latitudine</th>
-                    <th scope="col">Longitudine</th>
+                    <th id="cornertr" scope="col">Longitudine</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="pointer" *ngFor="let entry of searchCountry ; index as i"  (click)="copiaLat(i)" >
-                    <th scope="row"> {{entry.name}}</th>
-                    <th scope="row"> {{entry.alpha2Code}}</th>
+                    <th class="linea" scope="row"> {{entry.name}}</th>
+                    <th class="linea" scope="row"> {{entry.alpha2Code}}</th>
                     <td>{{entry.latlng[0]}}</td>
                     <td>{{entry.latlng[1]}}</td>
                 </tr>

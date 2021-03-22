@@ -13,21 +13,21 @@
     <button id="moveback" class="btn btn-outline-info mb-3 button" [routerLink]='["/dashboard"]'>Torna indietro alla
       dashboard </button>
   </div>
-  <table class="table table table-hover border shadow">
-    <thead class="thead-dark">
+  <table class="table table table-hover">
+    <thead class="thead">
       <tr>
-        <th scope="col">Nazione</th>
+        <th id="cornertl" scope="col">Nazione</th>
         <th scope="col">Totale abitanti</th>
         <th scope="col">Totale Morti</th>
         <th scope="col">Casi Confermati da inizio emergenza</th>
         <th scope="col">Tasso di mortalità</th>
         <th scope="col">Casi per milioni di abitanti</th>
-        <th scope="col">Ultimo aggiornamento</th>
+        <th id="cornertr" scope="col">Ultimo aggiornamento</th>
       </tr>
     </thead>
     <tbody>
       <tr class="pointer" *ngFor="let entry of dataArray">
-        <th scope="row"> {{entry.name}}</th>
+        <th class="linea" scope="row"> {{entry.name}}</th>
         <td>{{entry.population}}</td>
         <td>{{entry.latest_data.deaths}}</td>
         <td>{{entry.latest_data.confirmed}}</td>

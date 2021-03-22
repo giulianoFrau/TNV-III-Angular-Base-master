@@ -23,19 +23,19 @@
     </div>
   </form>
   <button class="btn btn-outline-success mb-3" (click)="filterBy(form)">Filtra</button>
-  <table class="table table table-hover border shadow" *ngIf="showResult">
-    <thead class="thead-dark">
+  <table class="table table table-hover" *ngIf="showResult">
+    <thead class="thead">
       <tr>
-        <th scope="col">Latitudine</th>
+        <th id="cornertl" scope="col">Latitudine</th>
         <th scope="col">Longitudine</th>
         <th scope="col">Nome POI</th>
         <th scope="col">Tipo POI</th>
         <th scope="col">Ingresso</th>
-        <th scope="col">Valutazione</th>
+        <th id="cornertr" scope="col">Valutazione</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="pointer" *ngFor="let entry of arrayInterfacciaPoi 
+      <tr class="linea" class="pointer" *ngFor="let entry of arrayInterfacciaPoi 
           | filtronomevalutazione : nomePoi : valutazione">
         <td>{{entry.latitudine}}</td>
         <td>{{entry.longitudine}}</td>

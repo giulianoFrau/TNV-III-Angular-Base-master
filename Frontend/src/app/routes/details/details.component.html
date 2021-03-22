@@ -3,7 +3,7 @@
 <br>
 <div *ngIf="dataEntry != null" class="container">
   <i>
-    <h3 id="testo">Il tuo POI si trova in : {{ nomePaese }}</h3>
+    <h3 id="testo">Il tuo POI si trova in: {{ nomePaese }}</h3>
   </i>
   <agm-map [latitude]="latitudine" [longitude]="longitudine" [zoom]="zoom" [mapTypeId]="mapTypeId">
     <agm-marker [latitude]="latitudine" [longitude]="longitudine">
@@ -12,7 +12,7 @@
         <p>Capital :{{ capitale }}</p>
         <p>Region :{{ regione }}</p>
         <p>Population :{{ popolazione }}</p>
-        <p>code :{{ code }}</p>
+        <p>Code :{{ code }}</p>
       </agm-info-window>
     </agm-marker>
   </agm-map>
@@ -44,21 +44,21 @@
   <div id="small">
   </div>
   <br>
-  <table class="table table table-hover border shadow ">
-    <thead class="thead-dark">
+  <table class="table table table-hover">
+    <thead class="thead">
       <tr>
-        <th scope="col">Nazione</th>
+        <th id="cornertl" scope="col">Nazione</th>
         <th scope="col">Totale Morti</th>
         <th scope="col">Casi totali confermati</th>
         <th scope="col">Tasso di mortalità</th>
         <th scope="col">Casi per milioni di abitanti</th>
         <th scope="col">Ultimo aggiornamento</th>
-        <th scope="col">grado di rischio</th>
+        <th id="cornertr" scope="col">Grado di rischio</th>
       </tr>
     </thead>
     <tbody>
       <tr class="pointer">
-        <th scope="row"> {{nazione}}</th>
+        <th class="linea" scope="row"> {{nazione}}</th>
         <td>{{morti}}</td>
         <td>{{totCasi}}</td>
         <td>{{tassoMortalita | number: '1.1-2'}} %</td>
