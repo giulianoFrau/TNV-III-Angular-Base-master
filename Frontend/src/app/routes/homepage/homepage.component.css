@@ -84,9 +84,17 @@
 }
 .col-lg-4{
  column-gap: 100px;
+
 }
 h1{
   text-align: center;
   font-size: 80px;
   color: #17a2b8;
+}
+
+#ombra{
+  box-shadow: 10px  10px 5px #dedede,
+  -10px -10px 5px #dedede,
+   10px -10px 5px #dedede,
+  -10px  10px 5px #dedede;;
 }
