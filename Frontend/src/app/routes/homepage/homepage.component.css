@@ -8,17 +8,16 @@
   
   
   /* Center align the text within the three columns below the carousel */
-  .marketing .col-lg-4 {
+  .marketing .col-lg-3 {
     margin-bottom: 1.5rem;
     text-align: center;
   }
-  .marketing h2 {
-    font-weight: 400;
+  .marketing h5 {
+    font-weight: 600;
   }
   /* rtl:begin:ignore */
-  .marketing .col-lg-4 p {
-    margin-right: .75rem;
-    margin-left: .75rem;
+  .col-lg-3  {
+  margin-left: 70px;
   }
   /* rtl:end:ignore */
   
@@ -82,10 +81,7 @@
 .btn-info{
   border-radius: 20px;
 }
-.col-lg-4{
- column-gap: 100px;
 
-}
 h1{
   text-align: center;
   font-size: 80px;
@@ -101,4 +97,15 @@ h1{
 
 .row{
   margin: 40px 0px 60px 0;
+}
+
+p{
+  font-size: small;
+}
+
+#ombra{
+  box-shadow: 10px  10px 5px #dedede,
+  -10px -10px 5px #dedede,
+   10px -10px 5px #dedede,
+  -10px  10px 5px #dedede;;
 }
