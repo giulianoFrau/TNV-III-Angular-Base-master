@@ -149,6 +149,11 @@ span.psw {
 /*testo apertura*/
 .row{
   color: grey;
+  margin: 0 auto;
+  width: 100%;
+
+
+
   }
 
   #premessa{
@@ -169,10 +174,10 @@ span.psw {
     position: relative;
   }*/
 
-  /*soluzione ombra 2 (eliminare classe border shadow)
+
  #ombra{
    box-shadow: 10px  10px 5px #dedede,
    -10px -10px 5px #dedede,
     10px -10px 5px #dedede,
    -10px  10px 5px #dedede;;
- }*/
+ }
