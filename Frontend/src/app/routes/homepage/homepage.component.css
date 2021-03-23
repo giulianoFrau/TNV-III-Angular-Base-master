@@ -98,3 +98,7 @@ h1{
    10px -10px 5px #dedede,
   -10px  10px 5px #dedede;;
 }
+
+.row{
+  margin: 40px 0px 60px 0;
+}

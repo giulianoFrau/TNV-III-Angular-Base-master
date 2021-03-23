@@ -63,13 +63,12 @@ background-color: white;
     
   }
   
-
   a{
    font-family: sans-serif;
    font-size: 18px;
   }
 
   .logo-img{
-    padding-top: 4pt;
-    width: 45%;
+    padding-top: 1pt;
+    width: 40%;
   }
