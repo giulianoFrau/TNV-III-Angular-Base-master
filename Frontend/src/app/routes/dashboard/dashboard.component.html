@@ -5,14 +5,20 @@
   <i><h3>Elenco dei tuoi POI</h3></i>
   <br>
   <div class="text-right">
-    <button class="btn btn-outline-info mb-3 add" [routerLink]='["/add"]'>Aggiungi una destinazione</button>
-    <button class="btn btn-outline-info mb-3 filter" [routerLink]='["/filterdouble"]'>Filtra i tuoi
-      POI</button>
-    <button class="btn btn-outline-info mb-3 sort " [routerLink]='["/sortBy"]'>Ordina i tuoi POI</button>
-    <button class="btn btn-outline-info mb-3 api " [routerLink]='["/apicorona"]'>Situazione Pandemica
-      Globale</button>
+    <a > <i (click)='showContent()' class="fas fa-bars"> Menu' rapido</i></a>
   </div>
-  <table class="table table table-hover ">
+  <br>
+
+  <div class="text-right" *ngIf='variable'>
+    <i class="fas fa-globe-europe mb-3 add" [routerLink]='["/add"]'> Aggiungi una destinazione</i>   
+    <i class="fas fa-filter filt" [routerLink]='["/filterdouble"]'> Filtra i tuoi POI</i> 
+    <i class="fas fa-sort-alpha-up order" [routerLink]='["/sortBy"]'> Ordina i tuoi POI</i> 
+     
+    <i class="fas fa-viruses api" [routerLink]='["/apicorona"]'> Situazione Pandemica globale</i>  
+   
+  </div >
+  
+  <table class="table table-hover ">
     <thead class="thead">
       <tr>
         <th id="cornertl" scope="col">#</th>
@@ -38,5 +44,4 @@
       </tr>
     </tbody>
   </table>
- 
 </div>

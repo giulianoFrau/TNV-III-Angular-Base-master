@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
 
   interfacciaPoiLoader = false;
   public arrayInterfacciaPoi: InterfacciaPoi[];
+  variable = false;
 
   constructor(private dataService: DataService, private router: Router, private loginService: LoginService) { }
 
@@ -29,5 +30,11 @@ export class DashboardComponent implements OnInit {
 
   goToDetails(id) {
     this.router.navigateByUrl('/details/' + id);
+  }
+
+
+  showContent() {
+    this.variable =!this.variable;
+  
   }
 }

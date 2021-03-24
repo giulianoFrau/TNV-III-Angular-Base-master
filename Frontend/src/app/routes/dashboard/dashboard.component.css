@@ -49,21 +49,27 @@ h1{
 }
 
 .add{
-    position:relative;
-    right: 30%;
+   
+    margin-right: 3%;
+}
+.api{
+   
+    margin-left: 3%;
 }
 
-.filter{
-    position:relative;
-    right: 21%;
+.filt{
+    margin-right: 3%;
+    
 }
 
 .sort{
-    position:relative;
-    right: 9%;
+  
+    margin-right: 3%;
 }
 
 h3{   
     text-align: center;
 }
+
+
 
