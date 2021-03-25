@@ -1,9 +1,9 @@
 <app-header></app-header>
 
 <div class="container p-5">
-  <div class="row">
-    <button class="btn btn-outline-info mr-5  " [routerLink]="['/dashboard']">Indietro</button>
-  </div>
+  
+    <button class="btn btn-outline-info float-right " [routerLink]="['/dashboard']">Indietro</button>
+
   <form class="pt-5" #form="ngForm">
     <div class="form-group row">
       <label for="sort" class="col-sm-2 col-form-label">Ordina per:</label>
@@ -14,8 +14,12 @@
       </div>
     </div>
   </form>
-  <button class="btn btn-outline-success mb-3 " (click)="sortBy(form)">Ordina</button>
-  <table class="table table table-hover">
+  <button class="btn btn-outline-success float-right " (click)="sortBy(form)">Ordina</button>
+  <br>
+  <br>
+  
+  <div class="table-responsive-md">
+  <table class="table text-center table-hover">
     <thead class="thead">
       <tr>
         <th id="cornertl"scope="col">Latitudine</th>
@@ -37,4 +41,5 @@
       </tr>
     </tbody>
   </table>
+</div>
 </div>

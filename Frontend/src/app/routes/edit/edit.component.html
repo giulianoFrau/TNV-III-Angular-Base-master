@@ -3,7 +3,7 @@
 <br>
 <div *ngIf="dataEntry != null" class="container">
 
-    <button class="btn btn-outline-info mr-5 " [routerLink]="['/dashboard']">Indietro</button>
+    <button class="btn btn-outline-info float-right" [routerLink]="['/dashboard']">Indietro</button>
 
     <form class="pt-5" (ngSubmit)="onSubmit()" #form="ngForm">
         <div class="form-group row">
@@ -27,7 +27,9 @@
                 </select>
             </div>
         </div>
-        <button type="submit" [disabled]="!form.valid" class="btn btn-outline-success ">Aggiorna</button>
+        
+        <button type="submit" [disabled]="!form.valid" class="btn btn-outline-success float-right  ">Aggiorna</button>
     </form>
+    <br>
+    <br>
 </div>
-<br>

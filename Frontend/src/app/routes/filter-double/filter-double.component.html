@@ -1,9 +1,9 @@
 <app-header></app-header>
 
 <div class="container p-5">
-  <div class="row">
-    <button class="btn btn-outline-info mr-5" [routerLink]="['/dashboard']">Indietro</button>
-  </div>
+ 
+    <button class="btn btn-outline-info float-right " [routerLink]="['/dashboard']">Indietro</button>
+
   <form class="pt-5" #form="ngForm">
     <div class="form-group row">
       <label for="nomePoi" class="col-sm-2 col-form-label">Nome POI</label>
@@ -22,8 +22,9 @@
       </div>
     </div>
   </form>
-  <button class="btn btn-outline-success mb-3" (click)="filterBy(form)">Filtra</button>
-  <table class="table table table-hover" *ngIf="showResult">
+  <button class="btn btn-outline-success mb-3 float-right " (click)="filterBy(form)">Filtra</button>
+  <div class="table-responsive-md">
+  <table class="table text-center table-hover" *ngIf="showResult">
     <thead class="thead">
       <tr>
         <th id="cornertl" scope="col">Latitudine</th>
@@ -46,4 +47,5 @@
       </tr>
     </tbody>
   </table>
+</div>
 </div>

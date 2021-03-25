@@ -78,10 +78,13 @@
                     <option *ngFor="let valutation of valutazione"> {{valutation}}</option>
                 </select>
             </div>
+
+            
         </div>
-        <div class="row">
-            <button  type="submit" [disabled]="!form.valid" class="btn btn-outline-success mr-5 left">Aggiungi</button>
-            <button class="btn btn-outline-info mr-5 left" [routerLink]="['/dashboard']">Torna alla dashboard</button>
-        </div>
+        
+           
     </form>
+    <button  type="submit" [disabled]="!form.valid" class="btn btn-outline-success float-right ">Aggiungi</button>
+    <button class="btn btn-outline-info  float-right spazio" [routerLink]="['/dashboard']">Torna alla dashboard</button>
+
 </div>

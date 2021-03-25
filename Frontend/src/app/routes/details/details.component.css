@@ -8,10 +8,7 @@ agm-map{
     width: 100;
 }
 
-.mr-5{
-    position: relative;
-    left: 92%;
-}
+
 
 .coloreBackground{
     background-image: url("/assets/img/prova.jpg");
@@ -29,10 +26,7 @@ agm-map{
   text-align: center;
 }
 
-.left{
-    position: relative;
-    left: 76%;
-}
+
 
 .thead{
     background-color:orange;
@@ -61,5 +55,7 @@ tbody{
     border: 1px solid lightgray;
 }
 
-
+.spazio{
+    margin-right: 1%;
+}
 

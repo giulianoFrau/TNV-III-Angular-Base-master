@@ -32,11 +32,12 @@
       <li class="list-group-item">Ingresso: {{ dataEntry.ingresso }}</li>
       <li class="list-group-item">Valutazione: {{ dataEntry.valutazione }}</li>
     </ul>
+    <br>
+    <button class="btn btn-outline-danger  float-right" (click)="delete()">Cancella</button>
+    <button class="btn btn-outline-success float-right spazio"
+      [routerLink]="['/edit/' + dataEntry.id]">Modifica</button>
   </div>
-  <div class="row">
-    <button class="btn btn-outline-danger ml-5 left" (click)="delete()">Cancella</button>
-    <button class="btn btn-outline-success ml-3 left" [routerLink]="['/edit/' + dataEntry.id]">Modifica</button>
-  </div>
+  <br>
   <br>
   <i>
     <h3>Situazione attuale covid : {{nomePaese}}</h3>
@@ -44,29 +45,32 @@
   <div id="small">
   </div>
   <br>
-  <table class="table table table-hover">
-    <thead class="thead">
-      <tr>
-        <th id="cornertl" scope="col">Nazione</th>
-        <th scope="col">Totale Morti</th>
-        <th scope="col">Casi totali confermati</th>
-        <th scope="col">Tasso di mortalità</th>
-        <th scope="col">Casi per milioni di abitanti</th>
-        <th scope="col">Ultimo aggiornamento</th>
-        <th id="cornertr" scope="col">Grado di rischio</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="pointer">
-        <th class="linea" scope="row"> {{nazione}}</th>
-        <td>{{morti}}</td>
-        <td>{{totCasi}}</td>
-        <td>{{tassoMortalita | number: '1.1-2'}} %</td>
-        <td>{{casiAbitanti}} </td>
-        <td>{{aggiornamento | date: 'd/M/yy , h:mm a' }} </td>
-        <td>{{rischio}} </td>
-      </tr>
-  </table>
-  <button class="btn btn-outline-info mr-5" [routerLink]="['/dashboard']">Indietro </button>
+  <div class="table-responsive-md">
+    <table class="table text-center table-hover">
+      <thead class="thead">
+        <tr>
+          <th id="cornertl" scope="col">Nazione</th>
+          <th scope="col">Totale Morti</th>
+          <th scope="col">Casi totali confermati</th>
+          <th scope="col">Tasso di mortalità</th>
+          <th scope="col">Casi per milioni di abitanti</th>
+          <th scope="col">Ultimo aggiornamento</th>
+          <th id="cornertr" scope="col">Grado di rischio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pointer">
+          <th class="linea" scope="row"> {{nazione}}</th>
+          <td>{{morti}}</td>
+          <td>{{totCasi}}</td>
+          <td>{{tassoMortalita | number: '1.1-2'}} %</td>
+          <td>{{casiAbitanti}} </td>
+          <td>{{aggiornamento | date: 'd/M/yy , h:mm a' }} </td>
+          <td>{{rischio}} </td>
+        </tr>
+    </table>
+  </div>
+  <button class="btn btn-outline-info float-right " [routerLink]="['/dashboard']">Indietro </button>
 </div>
+<br>
 <br>

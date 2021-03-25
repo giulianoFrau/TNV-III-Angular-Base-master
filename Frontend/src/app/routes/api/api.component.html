@@ -4,11 +4,12 @@
   <h1 class="text-center mb-5">
     Situazione mondiale Covid-19
   </h1>
-  <div id="move">
-    <button id="moveback" class="btn btn-outline-info mb-3 button" [routerLink]='["/dashboard"]'>Torna indietro alla
+
+    <button  class="btn btn-outline-info mb-3 float-right" [routerLink]='["/dashboard"]'>Torna indietro alla
       dashboard </button>
-  </div>
+ 
   <div class="input-group rounded col-sm-10"></div>
+
   <nav class="navbar">
     <input class="form-control" type="text" name="country" [(ngModel)]="name" (ngModelChange)="Search()"
       placeholder="Inserisci la nazione">

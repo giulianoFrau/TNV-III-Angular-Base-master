@@ -8,10 +8,7 @@ font-size: small;
 }
 
 
-.left{
-    position: relative;
-    left: 69%;
-}
+
 
 .thead{
     background-color:orange;
@@ -44,3 +41,6 @@ tbody{
     border-top: 1px  solid #dee2e6;
 }
 
+.spazio{
+    margin-right: 1%;
+}
