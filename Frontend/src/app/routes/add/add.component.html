@@ -13,7 +13,8 @@
         </div>
     </div>
     <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm"  >
-        <table class="table table table-hover" *ngIf="showResult">
+        <div class="table-responsive-md">
+        <table class="table table-hover text-center" *ngIf="showResult">
             <thead class="thead">
                 <tr>
                     <th id="cornertl" scope="col">Country</th>
@@ -32,6 +33,7 @@
             </tbody>
             
         </table>
+    </div>
         <br>
         <div class="form-group row">
             <label for="latitudine" class="col-sm-2 col-form-label">Latitudine</label>
