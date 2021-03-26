@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="container p-5">
-    <h3 class="text-center">Registra qui il tuo punto di intenteresse</h3>
+    <h3 class="text-center">Registra qui il tuo punto di interesse</h3>
     <div class="form-group row">
         <label for="ricerca" class="col-sm-2 col-form-label">Ricerca Nazione</label>
         <div class="input-group rounded col-sm-10">
@@ -77,14 +77,9 @@
                 <select class="form-control" id="valutazione" ngModel required name="valutazione">
                     <option *ngFor="let valutation of valutazione"> {{valutation}}</option>
                 </select>
-            </div>
-
-            
+            </div>      
         </div>
-        
-           
+        <button  type="submit" [disabled]="!form.valid" class="btn btn-outline-success float-right ">Aggiungi</button>
+        <button class="btn btn-outline-info  float-right spazio " [routerLink]="['/dashboard']">Torna alla dashboard</button>
     </form>
-    <button  type="submit" [disabled]="!form.valid" class="btn btn-outline-success float-right ">Aggiungi</button>
-    <button class="btn btn-outline-info  float-right spazio" [routerLink]="['/dashboard']">Torna alla dashboard</button>
-
 </div>
